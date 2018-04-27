@@ -6,7 +6,6 @@ import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, 
 
 const styles = {
     navBar: {
-        color: Grey[200], 
         position: 'fixed', 
         top: 0, 
         
@@ -22,18 +21,48 @@ const styles = {
 
     navItem: {
         margin: 20,
+        color: Grey[200], 
         ':hover': { border: 'solid #0088FF 2px' }
     }
 };
 
-const NavigationDesktop = () => (
-    <div style={styles.navBar}>
-        <h3 style={styles.navItem}>ABOUT</h3>
-        <h3 style={styles.navItem}>SKILLS</h3>
-        <h3 style={styles.navItem}>PORTFOLIO</h3>
-        <h3 style={{...styles.navItem, marginRight: 50}}>CONTACT</h3>
-        <li><Link activeClass="active" to="contact-page" spy={true} smooth={true} duration={500} >Test 1</Link></li>
-    </div>
-);
+class NavigationDesktop extends React.Component {
+
+    componentDidMount() {
+
+        Events.scrollEvent.register('begin', function () {
+          console.log("begin", arguments);
+        });
+    
+        Events.scrollEvent.register('end', function () {
+          console.log("end", arguments);
+        });
+    
+    }
+
+    componentWillUnmount() {
+        Events.scrollEvent.remove('begin');
+        Events.scrollEvent.remove('end');
+    }
+    
+    // window.onscroll = () => {
+    //     const nav = document.querySelector('#navbar');
+    //     if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
+    // };
+
+    render() {
+        return(
+            <div style={styles.navBar}>
+                <h3 style={styles.navItem}>ABOUT</h3>
+                <h3 style={styles.navItem}>SKILLS</h3>
+                <h3 style={styles.navItem}>PORTFOLIO</h3>
+                
+                <Link activeClass="active" to="contact-page" spy={true} smooth={true} duration={800} >
+                    <h3 style={{...styles.navItem, marginRight: 50}}>CONTACT</h3>
+                </Link>
+            </div>
+        );
+    }
+}
 
 export default NavigationDesktop;

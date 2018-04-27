@@ -78,11 +78,12 @@ class ContactPage extends React.Component {
         const { firstName, lastName, email, message } = this.state;
 
         return (
-            <div style={styles.container} >
+            <div id="contact-page" style={styles.container} >
                 <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
                 <Form style={styles.form} onSubmit={this.handleSubmit} success={false}>
                     <Form.Input 
-                        style={styles.field} 
+                        style={styles.field}
+                        required 
                         label='First Name' 
                         placeholder='First' 
                         name='firstName' 
@@ -91,6 +92,7 @@ class ContactPage extends React.Component {
                     />
                     <Form.Input 
                         style={styles.field} 
+                        required
                         label='Last Name' 
                         placeholder='Last' 
                         name='lastName' 
@@ -106,11 +108,11 @@ class ContactPage extends React.Component {
                         onChange={this.handleChange}
                     />
                     <Form.TextArea 
-                        style={styles.field} 
+                        style={{...styles.field, minHeight: 150}} 
                         autoHeight 
                         required
                         label='Your Message'
-                        placeholder='Try adding multiple lines' 
+                        placeholder='Message' 
                         name='message' value={message} 
                         onChange={this.handleChange}
                     />

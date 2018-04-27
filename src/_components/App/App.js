@@ -8,7 +8,7 @@ const App = () => (
   <div>
     <NavigationDesktop />
     <TitlePage />
-    <ContactPage id="contact-page" />
+    <ContactPage />
     <Footer />
   </div>
 );
