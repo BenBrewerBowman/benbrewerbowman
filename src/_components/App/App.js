@@ -4,12 +4,11 @@ import { TitlePage } from '../TitlePage';
 import { Footer } from '../Footer';
 import { ContactPage } from '../ContactPage';
 
-
 const App = () => (
   <div>
     <NavigationDesktop />
     <TitlePage />
-    <ContactPage />
+    <ContactPage id="contact-page" />
     <Footer />
   </div>
 );

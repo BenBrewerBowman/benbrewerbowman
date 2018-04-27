@@ -6,7 +6,7 @@ import Grey from 'material-ui/colors/grey';
 
 const TitlePage = () => (
     <div style={{width: '100%', height: '100vh', backgroundImage: `url(${RockyMountainNatPark})`, backgroundSize: 'cover', overflow: 'hidden'}}>
-      <div style={{color: Grey[200], marginTop: '17vh', marginLeft: '8vw', width: '50%', textAlign: 'center'}}> 
+      <div style={{color: Grey[200], marginTop: '17vh', marginLeft: '8vw', width: '50%', textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}> 
         <div style={{fontSize: 50}}>
           Ben Brewer-Bowman
         </div>
