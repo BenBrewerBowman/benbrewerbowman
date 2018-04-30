@@ -8,7 +8,7 @@ import { Button, Form, Message } from 'semantic-ui-react';
 const styles = {
 
     container: {
-        margin: '50px 0px'
+        padding: '50px 0px'
     },
 
     header: {
@@ -36,10 +36,10 @@ class ContactPage extends React.Component {
         super(props);
 
         this.state = { 
-            firstName: '',
-            lastName: '', 
-            email: '', 
-            message: ''
+            name: '',
+            senderEmail: '', 
+            subject: '', 
+            messageBody: ''
         }
     };
 
@@ -48,14 +48,13 @@ class ContactPage extends React.Component {
     }
   
     handleSubmit = () => {
-
-        const { firstName, lastName, email, message } = this.state;
+        const { name, senderEmail, subject, messageBody } = this.state;
 
         const data = {
-            firstName: firstName,
-            lastName: lastName,
-            fromEmailAddress: email,
-            messageBody: message
+            name: name,
+            senderEmail: senderEmail,
+            subject: subject,
+            messageBody: messageBody
         };
 
         const options = {
@@ -75,54 +74,57 @@ class ContactPage extends React.Component {
     }
 
     render() {
-        const { firstName, lastName, email, message } = this.state;
+        const { name, senderEmail, subject, messageBody } = this.state;
 
         return (
-            <div id="contact-page" style={styles.container} >
-                <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
-                <Form style={styles.form} onSubmit={this.handleSubmit} success={false}>
-                    <Form.Input 
-                        style={styles.field}
-                        required 
-                        label='First Name' 
-                        placeholder='First' 
-                        name='firstName' 
-                        value={firstName} 
-                        onChange={this.handleChange}
-                    />
-                    <Form.Input 
-                        style={styles.field} 
-                        required
-                        label='Last Name' 
-                        placeholder='Last' 
-                        name='lastName' 
-                        value={lastName} 
-                        onChange={this.handleChange}
-                    />
-                    <Form.Input 
-                        style={styles.field} 
-                        label='Your Email Address' 
-                        placeholder='Ex. email-address@some-site.com' 
-                        name='email' 
-                        value={email} 
-                        onChange={this.handleChange}
-                    />
-                    <Form.TextArea 
-                        style={{...styles.field, minHeight: 150}} 
-                        autoHeight 
-                        required
-                        label='Your Message'
-                        placeholder='Message' 
-                        name='message' value={message} 
-                        onChange={this.handleChange}
-                    />
-                    <Message
-                        success
-                        header='Your Message Was Successfully Sent!'
-                        content="Thanks for reaching out!"
-                    />
-                    <Button type='submit'>Submit</Button>
-                </Form>
+            <div style={{backgroundColor: 'whiteSmoke'}} id="contact-page"> 
+                <div style={styles.container} >
+                    <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
+                    <Form style={styles.form} onSubmit={this.handleSubmit} success={false}>
+                        <Form.Input 
+                            style={styles.field}
+                            required 
+                            label='Name' 
+                            placeholder='Name' 
+                            name='name' 
+                            value={name} 
+                            onChange={this.handleChange}
+                        />
+                        <Form.Input 
+                            style={styles.field} 
+                            label='Your Email'
+                            placeholder='Ex. email-address@some-site.com'
+                            name='senderEmail'
+                            value={senderEmail}
+                            onChange={this.handleChange}
+                        />
+                        <Form.Input 
+                            style={styles.field} 
+                            required
+                            label='Subject' 
+                            placeholder='Subject' 
+                            name='subject' 
+                            value={subject} 
+                            onChange={this.handleChange}
+                        />
+    
+                        <Form.TextArea 
+                            style={{...styles.field, minHeight: 150}} 
+                            autoHeight 
+                            required
+                            label='Your Message'
+                            placeholder='Message' 
+                            name='messageBody' value={messageBody} 
+                            onChange={this.handleChange}
+                        />
+                        <Message
+                            success
+                            header='Your Message Was Successfully Sent!'
+                            content="Thanks for reaching out!"
+                        />
+                        <Button type='submit'>Submit</Button>
+                    </Form>
+                </div>
             </div>
         );
     }
