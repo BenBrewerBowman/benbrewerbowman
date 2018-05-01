@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import qs from 'qs';
+import Slide from 'material-ui/transitions/Slide';
+import Snackbar from 'material-ui/Snackbar';
+import IconButton from 'material-ui/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 import { Button, Form, Message } from 'semantic-ui-react';
 
@@ -24,7 +28,7 @@ const styles = {
     },
 
     field: {
-        width: '80vw',
+        width: '90vw',
         maxWidth: 600
     },
 };
@@ -39,12 +43,14 @@ class ContactPage extends React.Component {
             name: '',
             senderEmail: '', 
             subject: '', 
-            messageBody: ''
+            messageBody: '',
+            submitSuccess: false,
+            submitError: false
         }
     };
 
     handleChange = (e, { name, value }) => {
-        this.setState({ [name]: value });
+        this.setState({ [name]: value, submitError: false });
     }
   
     handleSubmit = () => {
@@ -65,27 +71,47 @@ class ContactPage extends React.Component {
         };
 
         axios(options)
-            .then(function (response) {
-                console.log(response);
+            .then(response => {
+                console.log("set the state");
+                this.setState({
+                    name: '',
+                    senderEmail: '', 
+                    subject: '', 
+                    messageBody: '',
+                    submitSuccess: true,
+                    submitError: false
+                });
             })
-            .catch(function (error) {
-                console.log(error.response);
+            .catch(error => {
+                this.setState({
+                    submitError: true
+                });
             });
     }
 
+    handleSnackbarClose = (event, reason) => {
+        console.log("click entered")
+        if (reason === 'clickaway') {
+            return;
+        }
+        console.log('submitSuccess to false')
+        this.setState({ submitSuccess: false });
+    };
+
+
     render() {
-        const { name, senderEmail, subject, messageBody } = this.state;
+        const { name, senderEmail, subject, messageBody, submitSuccess, submitError } = this.state;
 
         return (
             <div style={{backgroundColor: 'whiteSmoke'}} id="contact-page"> 
                 <div style={styles.container} >
                     <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
-                    <Form style={styles.form} onSubmit={this.handleSubmit} success={false}>
+                    <Form style={styles.form} onSubmit={this.handleSubmit} error={submitError}>
                         <Form.Input 
                             style={styles.field}
                             required 
                             label='Name' 
-                            placeholder='Name' 
+                            placeholder='Ex. John Doe' 
                             name='name' 
                             value={name} 
                             onChange={this.handleChange}
@@ -112,17 +138,42 @@ class ContactPage extends React.Component {
                             style={{...styles.field, minHeight: 150}} 
                             autoHeight 
                             required
-                            label='Your Message'
-                            placeholder='Message' 
+                            label='Message'
+                            placeholder='Your Message' 
                             name='messageBody' value={messageBody} 
                             onChange={this.handleChange}
                         />
-                        <Message
-                            success
-                            header='Your Message Was Successfully Sent!'
-                            content="Thanks for reaching out!"
-                        />
                         <Button type='submit'>Submit</Button>
+                        <Slide in={submitError} direction="up" mountOnEnter unmountOnExit>
+                            <Message
+                                style={{textAlign: 'center'}}
+                                error
+                                header='Error sending message'
+                                content={'Sorry for the inconvenience! We have been notified and will take care of this problem promptly!'}
+                            />
+                        </Slide>
+                        <Snackbar
+                            style={{textAlign: 'center'}}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'center'}}
+                            open={submitSuccess}
+                            autoHideDuration={6000}
+                            onClose={this.handleSnackbarClose}
+                            SnackbarContentProps={{
+                                'aria-describedby': 'message-id',
+                            }}
+                            message={<span id="message-id">Thanks for reaching out!</span>}
+                            action={[
+                                <IconButton
+                                  key="close"
+                                  aria-label="Close"
+                                  color="inherit"
+                                  onClick={this.handleSnackbarClose}
+                                >
+                                  <CloseIcon />
+                                </IconButton>,
+                            ]}
+                        />
+
                     </Form>
                 </div>
             </div>

@@ -2,9 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To do:
 Grid pictures
-Contact form combine name, add subject line
 Change navbar color
-Test for mobile
 Skills chips (Technical skills)
 
 Below you will find some information on how to perform common tasks.<br>
