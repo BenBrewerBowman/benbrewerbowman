@@ -54,7 +54,9 @@ class NavigationDesktop extends React.Component {
         return(
             <div style={styles.navBar}>
                 <h3 style={styles.navItem}>ABOUT</h3>
-                <h3 style={styles.navItem}>SKILLS</h3>
+                <Link activeClass="active" to="skills-page" spy={true} smooth={true} duration={800} >
+                    <h3 style={styles.navItem}>SKILLS</h3>
+                </Link>
                 <h3 style={styles.navItem}>PORTFOLIO</h3>
                 
                 <Link activeClass="active" to="contact-page" spy={true} smooth={true} duration={800} >

@@ -9,8 +9,8 @@ const App = () => (
   <div>
     <NavigationDesktop />
     <TitlePage />
-    <SkillsPage />
-    <ContactPage />
+    <SkillsPage id='skills-page' />
+    <ContactPage id='contact-page' />
     <Footer />
   </div>
 );

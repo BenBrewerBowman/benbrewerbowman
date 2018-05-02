@@ -103,7 +103,7 @@ class ContactPage extends React.Component {
         const { name, senderEmail, subject, messageBody, submitSuccess, submitError } = this.state;
 
         return (
-            <div style={{backgroundColor: 'whiteSmoke'}} id="contact-page"> 
+            <div style={{backgroundColor: 'whiteSmoke'}} id={this.props.id} > 
                 <div style={styles.container} >
                     <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
                     <Form style={styles.form} onSubmit={this.handleSubmit} error={submitError}>
