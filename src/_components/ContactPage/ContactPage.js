@@ -117,7 +117,7 @@ class ContactPage extends React.Component {
                 <div style={styles.container} >
                     <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
                     <OnVisible onChange={this.handleVisibility}>
-                        <Slide in={visible} direction="down" {...(visible ? { timeout: 750 } : {})} >
+                        <Slide in={visible} direction="left" style={{ transitionDelay: visible? 500 : 0 }} {...(visible ? { timeout: 1000 } : {})} >
                             <Form style={styles.form} onSubmit={this.handleSubmit} error={submitError}>
                                 <Form.Input 
                                     style={styles.field}

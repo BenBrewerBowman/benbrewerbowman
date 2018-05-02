@@ -23,12 +23,12 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        maxHeight: 200
     },
 
-    field: {
-        width: '80vw',
-        maxWidth: 600
+    skillItem: {
+        maxHeight: 200
     },
 };
 
@@ -64,7 +64,7 @@ class SkillsPage extends React.Component {
                     
                     <Grid container spacing={24} alignItems='center' justify='center' >
                         
-                        <Grid item xs={12} sm={6} md={3} style={styles.centerChildren}>
+                        <Grid item xs={12} sm={6} md={3} style={styles.centerChildren} >
                             <Grow
                                 in={visible}
                                 style={{ transformOrigin: '0 0 0' }}
@@ -154,7 +154,7 @@ class SkillsPage extends React.Component {
                                 </svg>
                             </Grow>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} style={styles.centerChildren}>
+                        <Grid item xs={12} sm={6} md={3} style={styles.centerChildren} >
                             <Grow
                                 in={visible}
                                 style={{ transformOrigin: '0 0 0', transitionDelay: visible? 1000 : 0  }}
