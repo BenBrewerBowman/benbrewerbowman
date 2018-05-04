@@ -3,8 +3,6 @@ import Grid from 'material-ui/Grid';
 import OnVisible from 'react-on-visible';
 import Grow from 'material-ui/transitions/Grow';
 import Zoom from 'material-ui/transitions/Zoom';
-
-import { SkillChip } from '../SkillChip';
 import ReactIcon from './react-svg-icon.svg';
 
 
