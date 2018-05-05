@@ -14,7 +14,7 @@ const styles = {
 
     header: {
         textAlign: 'center',
-        marginBottom: 30,
+        marginBottom: 20,
         fontSize: 48
     },
 
@@ -56,7 +56,7 @@ class SkillsPage extends React.Component {
                 <div style={styles.container} >
                     <h1 style={styles.header}> Developer Skills </h1>
                     <Zoom in={visible} style={{ transitionDelay: visible ? 2000 : 0 }}>
-                        <h1 style={{textAlign: 'center', marginBottom: 30}}>
+                        <h1 style={{textAlign: 'center', marginBottom: 20}}>
                             This site was even built using React, Node, and GraphQL!
                         </h1>
                     </Zoom>    

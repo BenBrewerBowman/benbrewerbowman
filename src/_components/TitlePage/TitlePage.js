@@ -2,7 +2,7 @@ import React from 'react';
 import Particles from 'react-particles-js';
 import RockyMountainNatPark from './RockyMountainNatPark.jpg'
 import Grey from 'material-ui/colors/grey';
-import Button from 'material-ui/Button';
+import { Button } from 'semantic-ui-react'
 
 
 const TitlePage = () => (
@@ -137,7 +137,7 @@ const TitlePage = () => (
             <h1 style={{marginTop: 10, fontSize: 36}}>
               Software Developer 
             </h1>
-            <Button style={{marginTop: 20, backgroundColor: "whiteSmoke", "&:hover": {color: '#1DE9B6'}}} variant="raised" href="https://github.com/BenBrewerBowman">
+            <Button style={{marginTop: 20}} color='#1DE9B6' href="https://github.com/BenBrewerBowman">
               View Github
             </Button>
           </div>
