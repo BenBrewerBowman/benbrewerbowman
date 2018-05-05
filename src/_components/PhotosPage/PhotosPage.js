@@ -28,7 +28,7 @@ const styles = {
         textAlign: 'center',
         marginBottom: 30,
         fontSize: 36,
-        backgroundColor: '#1DE9B6'
+        // backgroundColor: '#1DE9B6'
     }
 }
 const photos = [

@@ -2,6 +2,7 @@ import React from 'react';
 import Particles from 'react-particles-js';
 import RockyMountainNatPark from './RockyMountainNatPark.jpg'
 import Grey from 'material-ui/colors/grey';
+import Button from 'material-ui/Button';
 
 
 const TitlePage = () => (
@@ -129,13 +130,16 @@ const TitlePage = () => (
             height='100vh'
             width='100%'
           />
-          <div style={{color: Grey[200], zIndex: 100, textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}> 
+          <div style={{color: 'black', zIndex: 100, textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}> 
             <h1 style={{fontSize: 58}}>
               Ben Brewer-Bowman
             </h1>
-            <h1 style={{marginTop: 30, fontSize: 36}}>
+            <h1 style={{marginTop: 10, fontSize: 36}}>
               Software Developer 
             </h1>
+            <Button style={{marginTop: 20, backgroundColor: "whiteSmoke", "&:hover": {color: '#1DE9B6'}}} variant="raised" href="https://github.com/BenBrewerBowman">
+              View Github
+            </Button>
           </div>
         </div>
 );

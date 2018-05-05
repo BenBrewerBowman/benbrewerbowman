@@ -18,7 +18,7 @@ const styles = {
 
     header: {
         textAlign: 'center',
-        marginBottom: 50,
+        marginBottom: 30,
         fontSize: 36
     },
 
