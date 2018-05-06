@@ -1,6 +1,5 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
-import ImageGallery from 'react-image-gallery';
 import Lightbox from 'react-images';
 
 import BryceCanyon from './img/bryce-canyon.jpg';
@@ -35,8 +34,8 @@ const photos = [
     { src: RedCastle, width: 4, height: 3 },
     { src: RockyMountainLake, width: 4, height: 3 },
     { src: BryceCanyon, width: 4, height: 3 },
-    { src: CapitolReef, width: 4, height: 3 },
     { src: DelicateArch, width: 3, height: 4 },
+    { src: CapitolReef, width: 4, height: 3 },
     { src: MountainBike, width: 4, height: 3 },
     { src: RedCastleBen, width: 3, height: 4 },
     { src: RedCastleUpper, width: 10, height: 3 },
@@ -113,8 +112,8 @@ class PhotosPage extends React.Component {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} >
                     <h1 style={styles.header}> If you're not living life, you're not living right! </h1>
                     <h3 style={{textAlign: 'center', marginBottom: 30, maxWidth: 1000}}>
-                        One of my favorite things to do in my free time is visit national parks, forests, and monuments. <br/>
-                        These are some photos from some of my greatest experiences in both Colorado and Utah. <br/>
+                        One of my favorite things to do in my free time is visit national parks, forests, and monuments.
+                        These are some photos from some of my greatest experiences in both Colorado and Utah.
                         From the deserts of southern Utah to the rockies of Colorado, I am amazed by the beauty of the Western US.
                     </h3>
                 </div>
@@ -133,4 +132,3 @@ class PhotosPage extends React.Component {
 }
 
 export {PhotosPage};
-

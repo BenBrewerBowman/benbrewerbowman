@@ -3,7 +3,6 @@ import Grid from 'material-ui/Grid';
 import OnVisible from 'react-on-visible';
 import Grow from 'material-ui/transitions/Grow';
 import Zoom from 'material-ui/transitions/Zoom';
-import ReactIcon from './react-svg-icon.svg';
 
 
 const styles = {
@@ -57,7 +56,7 @@ class SkillsPage extends React.Component {
                     <h1 style={styles.header}> Developer Skills </h1>
                     <Zoom in={visible} style={{ transitionDelay: visible ? 2000 : 0 }}>
                         <h1 style={{textAlign: 'center', marginBottom: 20}}>
-                            This site was even built using React, Node, and GraphQL!
+                            This site was even built using React, NodeJS, and GraphQL!
                         </h1>
                     </Zoom>    
                     <Grid container spacing={24} alignItems='center' justify='center' >            

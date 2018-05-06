@@ -1,7 +1,5 @@
 import React from 'react';
-import Grey from 'material-ui/colors/grey';
-
-import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, Events } from 'react-scroll'
 
 
 const styles = {
@@ -23,7 +21,7 @@ const styles = {
     navItem: {
         margin: 20,
         color: 'black', 
-        ':hover': { border: 'solid #0088FF 2px' }
+        '&:hover': { color: 'red' }
     }
 };
 
@@ -46,25 +44,24 @@ class NavigationDesktop extends React.Component {
         Events.scrollEvent.remove('end');
     }
     
-    // window.onscroll = () => {
-    //     const nav = document.querySelector('#navbar');
-    //     if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
-    // };
+    handleHover() {
+
+    }
 
     render() {
         const offsetScroll = -30;
 
         return(
             <div style={styles.navBar}>
-                <h3 style={styles.navItem}>ABOUT</h3>
+                <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                    <h3 style={styles.navItem}>ABOUT ME</h3>
+                </Link>
                 <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem}>SKILLS</h3>
+                    <h3 style={styles.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
                 </Link>
                 <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 style={styles.navItem}>TRAVELS</h3>
-                </Link>
-                <h3 style={styles.navItem}>PORTFOLIO</h3>
-                
+                </Link>            
                 <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 style={{...styles.navItem, marginRight: 50}}>CONTACT</h3>
                 </Link>
