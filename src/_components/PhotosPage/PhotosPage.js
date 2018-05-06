@@ -51,55 +51,85 @@ class PhotosPage extends React.Component {
 
   constructor() {
     super();
-    this.state = { currentImage: 0 };
+    this.state = { 
+        currentImage: 0,
+        lightboxIsOpen: false,
+        numColumns: 3
+    };
     this.closeLightbox = this.closeLightbox.bind(this);
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
   }
+
   openLightbox(event, obj) {
     this.setState({
       currentImage: obj.index,
-      lightboxIsOpen: true,
+      lightboxIsOpen: true
     });
   }
+
   closeLightbox() {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false,
     });
   }
+
   gotoPrevious() {
     this.setState({
       currentImage: this.state.currentImage - 1,
     });
   }
+
   gotoNext() {
     this.setState({
       currentImage: this.state.currentImage + 1,
     });
   }
-  render() {
-    return (
-        <div style={styles.container} id={this.props.id}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} >
-                <h1 style={styles.header}> If you're not living life, you're not living right! </h1>
-                <h3 style={{textAlign: 'center', marginBottom: 20, maxWidth: 1000}}>
-                These are some photos from some of my greatest experiences in both Colorado and Utah. 
-                From the deserts of southern Utah to the rockies of Colorado, I am amazed by the beauty of the Western US.
-                </h3>
+
+    componentDidMount() {
+        this.handleResize();
+        window.addEventListener('resize',  this.handleResize.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.handleResize.bind(this));
+    }
+
+    handleResize() {
+        console.log("I've been resized!");
+        if(window.innerWidth < 750) 
+            this.setState({ numColumns: 2 });
+        else
+            this.setState({ numColumns: 3 });
+    }
+
+    render() {
+        const { numColumns } = this.state;
+
+        return (
+            <div style={styles.container} id={this.props.id}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} >
+                    <h1 style={styles.header}> If you're not living life, you're not living right! </h1>
+                    <h3 style={{textAlign: 'center', marginBottom: 30, maxWidth: 1000}}>
+                        One of my favorite things to do in my free time is visit national parks, forests, and monuments. <br/>
+                        These are some photos from some of my greatest experiences in both Colorado and Utah. <br/>
+                        From the deserts of southern Utah to the rockies of Colorado, I am amazed by the beauty of the Western US.
+                    </h3>
+                </div>
+                <Gallery photos={photos} onClick={this.openLightbox} columns={numColumns}/>
+                <Lightbox 
+                    images={photos}
+                    onClose={this.closeLightbox}
+                    onClickPrev={this.gotoPrevious}
+                    onClickNext={this.gotoNext}
+                    currentImage={this.state.currentImage}
+                    isOpen={this.state.lightboxIsOpen}
+                />
             </div>
-            <Gallery photos={photos} onClick={this.openLightbox} />
-            <Lightbox images={photos}
-            onClose={this.closeLightbox}
-            onClickPrev={this.gotoPrevious}
-            onClickNext={this.gotoNext}
-            currentImage={this.state.currentImage}
-            isOpen={this.state.lightboxIsOpen}
-            />
-        </div>
-    )
-  }
+        )
+    }
 }
 
 export {PhotosPage};

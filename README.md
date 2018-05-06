@@ -1,12 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 To do:
-Grid pictures (responsive (num columns 2 on ipad and smaller))
 snowboarding and biking section? Living in Utah
 Mobile Navbar
 Navbar hover color and mouse pointer
 About me section
-Portfolio to sample work
 
 Javascript lagging
 
