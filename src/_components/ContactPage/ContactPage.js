@@ -141,7 +141,7 @@ class ContactPage extends React.Component {
                                     style={styles.field} 
                                     required
                                     label='Subject' 
-                                    placeholder='Subject' 
+                                    placeholder='Ex. Hey' 
                                     name='subject' 
                                     value={subject} 
                                     onChange={this.handleChange}
@@ -152,7 +152,7 @@ class ContactPage extends React.Component {
                                     autoHeight 
                                     required
                                     label='Message'
-                                    placeholder='Your Message' 
+                                    placeholder="Let me know what's going on!"
                                     name='messageBody' value={messageBody} 
                                     onChange={this.handleChange}
                                 />
