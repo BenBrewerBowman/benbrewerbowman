@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 import ProfilePic from './about-img.png';
 import { SnowboardingSection } from '../SnowboardingSection';
+import { OutdoorStats } from '../OutdoorStats';
 
 
 const styles = {
@@ -37,6 +38,8 @@ const styles = {
 };
 
 
+
+
 const AboutPage = (props) => (
 
     <div id={props.id} > 
@@ -57,14 +60,6 @@ const AboutPage = (props) => (
                             It was both an innovative and meaningful project that resonated with me until ultimately inspiring me to make the leap into the world of software.
                             <br/>
                             <br/>
-                            Some of my interests include snowboarding, mountain biking, and backpacking.
-                            Here are my some of my biggest outdoor accomplishments to date:
-                            <br/>
-                            Fastest speed on a snowboard: 57 mph
-                            Longest backpacking trip: 27 days across iceland
-                            Largest elevation drop mountain biking: 5800 feet
-                            Longest distance mountain biking: 37 miles
-                            <br/>
                             <br/>
                             Environmental sustainability and conservation are two important issues to me. 
                             Anything that helps us conserve and reduce our ecological footprint has both my interest and support.
@@ -76,6 +71,7 @@ const AboutPage = (props) => (
                 </Grid>
             </Grid>
         </div>
+        <OutdoorStats />
         <SnowboardingSection/>
     </div>
 );
