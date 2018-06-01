@@ -8,7 +8,7 @@ import Zoom from 'material-ui/transitions/Zoom';
 const styles = {
 
     container: {
-        padding: '50px 50px'
+        padding: '20px 50px 50px 50px'
     },
 
     header: {

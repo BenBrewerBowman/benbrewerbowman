@@ -7,18 +7,21 @@ import OnVisible from 'react-on-visible';
 const styles = {
 
     container: {
-        padding: '30px 50px',
+        padding: '0px 60px',
         // backgroundColor: '#5DDFED',
     },
 
     header: {
         textAlign: 'center',
         marginBottom: 20,
-        fontSize: 42
+        fontSize: 20
     },
 
     countUp: {
         fontSize: 32,
+        flexGrow: 1,
+        justifySelf: 'self-end',
+        marginBottom: 'auto'
     },
 
     content: {
@@ -31,8 +34,8 @@ const styles = {
     flexColumn: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        // justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'end',
         marginBottom: 30
     },
 
@@ -79,15 +82,15 @@ class OutdoorStats extends React.Component  {
         
 
         return (
-            <div>
-                <h3 style={styles.content}> 
+            <div style={styles.container}>
+                <p style={styles.header}> 
                     Some of my interests include snowboarding, mountain biking, and backpacking.<br/>
                     Here are my some of my biggest outdoor accomplishments to date:
-                </h3>
+                </p>
                 <OnVisible onChange={this.handleVisibility}>
                     <div style={{marginTop: 30}} >
-                        <Grid container spacing={24} alignItems='flex-end' justify='center'  > 
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='flex-start' >
+                        <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
+                            <Grid item xs={12} md={3} style={{marginTop: 0}} direction='column' justify='flex-end' alignItems='center' >
                                 <p style={styles.content}>Fastest snowboarding speed:</p>
                                 <CountUp
                                     style={styles.countUp}
@@ -101,7 +104,7 @@ class OutdoorStats extends React.Component  {
                                 />
                                 <p style={styles.content}>MPH</p>
                             </Grid>  
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='flex-start' >
+                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
                                 <p style={styles.content}>Longest backpacking trip:</p>
                                 <CountUp
                                     style={styles.countUp}
@@ -115,7 +118,21 @@ class OutdoorStats extends React.Component  {
                                 />
                                 <p style={styles.content}>Days</p>
                             </Grid>  
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='flex-start' >
+                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
+                                <p style={styles.content}>Longest distance mountain biking:</p>
+                                <CountUp
+                                    style={styles.countUp}
+                                    start={start}
+                                    end={distanceMountainBikingValue}
+                                    redraw={redraw}
+                                    duration={duration}
+                                    useEasing={true}
+                                    useGrouping={true}
+                                    decimals={0}
+                                />
+                                <p style={styles.content}>Miles</p>
+                            </Grid> 
+                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
                                 <p style={styles.content}>Biggest elevation drop mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
@@ -129,20 +146,6 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Feet</p>
-                            </Grid> 
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='flex-start' >
-                                <p style={styles.content}>Longest distance mountain biking:</p>
-                                <CountUp
-                                    style={styles.countUp}
-                                    start={start}
-                                    end={distanceMountainBikingValue}
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={true}
-                                    useGrouping={true}
-                                    decimals={0}
-                                />
-                                <p style={styles.content}>Miles</p>
                             </Grid> 
                         </Grid>
                     </div>
