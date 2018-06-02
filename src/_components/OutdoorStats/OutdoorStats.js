@@ -19,8 +19,6 @@ const styles = {
 
     countUp: {
         fontSize: 32,
-        flexGrow: 1,
-        justifySelf: 'self-end',
         marginBottom: 'auto'
     },
 
@@ -28,22 +26,21 @@ const styles = {
         marginTop: 10,
         fontSize: 18,
         fontWeight: 'bold',
-         textAlign: 'center'
+        textAlign: 'center'
     },
 
     flexColumn: {
         display: 'flex',
         flexDirection: 'column',
-        // alignItems: 'center',
-        // justifyContent: 'end',
-        marginBottom: 30
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        marginBottom: 30,
     },
 
     flexRow: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        // justifyContent: 'center',
         marginBottom: 30
     },
 
@@ -90,8 +87,8 @@ class OutdoorStats extends React.Component  {
                 <OnVisible onChange={this.handleVisibility}>
                     <div style={{marginTop: 30}} >
                         <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
-                            <Grid item xs={12} md={3} style={{marginTop: 0}} direction='column' justify='flex-end' alignItems='center' >
-                                <p style={styles.content}>Fastest snowboarding speed:</p>
+                            <Grid item xs={12} md={3} style={styles.flexColumn} direction='column' justify='center' alignItems='center' >
+                                <p style={{...styles.content, flexGrow: 1}}>Fastest snowboarding speed:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
@@ -105,7 +102,7 @@ class OutdoorStats extends React.Component  {
                                 <p style={styles.content}>MPH</p>
                             </Grid>  
                             <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={styles.content}>Longest backpacking trip:</p>
+                                <p style={{...styles.content, flexGrow: 1}}>Longest backpacking trip:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
@@ -119,7 +116,7 @@ class OutdoorStats extends React.Component  {
                                 <p style={styles.content}>Days</p>
                             </Grid>  
                             <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={styles.content}>Longest distance mountain biking:</p>
+                                <p style={{...styles.content, flexGrow: 1}}>Longest distance mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
@@ -133,13 +130,13 @@ class OutdoorStats extends React.Component  {
                                 <p style={styles.content}>Miles</p>
                             </Grid> 
                             <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={styles.content}>Biggest elevation drop mountain biking:</p>
+                                <p style={{...styles.content, flexGrow: 1}}>Biggest elevation drop mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
                                     end={elevationMountainBikingValue}
                                     redraw={redraw}
-                                    duration={duration}
+                                    duration={duration - 2}
                                     useEasing={true}
                                     useGrouping={true}
                                     decimal=","
