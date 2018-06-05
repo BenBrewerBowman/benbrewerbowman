@@ -45,7 +45,7 @@ const AboutPage = (props) => (
     <div id={props.id} > 
         <div style={styles.container} >
             <h1 style={styles.header}> Hey I'm Ben! </h1>
-            <Grid container spacing={24} direction='row-reverse' alignItems='flex-start' justify='center'  > 
+            <Grid style={{marginTop: 30}} container spacing={24} direction='row-reverse' alignItems='flex-start' justify='center'  > 
                 <Grid item xs={12} md={6} style={{...styles.centerChildren, marginTop: 0}} justify='center' alignItems='flex-start' >
                     <img src={ProfilePic} style={{ width: 300, height: 300, paddingBottom: 12}} />
                     <button style={{marginTop: 30}}class="ui blue inverted button">View Resume</button>
@@ -55,16 +55,23 @@ const AboutPage = (props) => (
                         {/* <h1 style={styles.header}> Hey! I'm Ben </h1> */}
                         <p style={styles.content}>  
                             I am a full-stack software developer with a passion for working on new and exciting projects.
-                            I have a B.S. in Mechatronics Engineering (Summa Cum Laude) from UNC Asheville, and currently live in Salt Lake City, UT.
-                            My favorite project to date is working with a startup tech company to develop a drive-by-wire control system for individuals with physical disabilities.
-                            It was both an innovative and meaningful project that resonated with me until ultimately inspiring me to make the leap into the world of software.
+                            I graduated with a B.S. in Mechatronics Engineering (Summa Cum Laude) from UNC Asheville, and live in Salt Lake City, UT.
+                            I have experience developing for both startups and corporations, as well as some side projects of my own.
+                            If it's innovative, novel, or challenging, it already has my attention. 
                             <br/>
                             <br/>
+                            My favorite project to date involved developing adaptive recreation software to assist those with physical disabilities defy their limitations. 
+                            My team and I developed drive-by-wire technology to control a "mountain trike" to allow the rider to independently
+                            Imagi
                             <br/>
+                            <br/>
+
                             Environmental sustainability and conservation are two important issues to me. 
                             Anything that helps us conserve and reduce our ecological footprint has both my interest and support.
                             sWhether it's improving water
                             We only have one earth, let's take care of it!
+
+                            Some of my interests include snowboarding, mountain biking, and backpacking.<br/>
                         </p>
                         
                     </div>

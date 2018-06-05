@@ -2,12 +2,16 @@ import React from 'react';
 import Grid from 'material-ui/Grid';
 import CountUp, { startAnimation } from 'react-countup';
 import OnVisible from 'react-on-visible';
+import MountainBikingPng from './mountain-biking.png';
+import SnowPng from './snow.png';
+import MountainSvg from './mountain.svg';
+import BackpackerPng from './backpacker.svg';
 
 
 const styles = {
 
     container: {
-        padding: '0px 60px',
+        padding: '0px 60px 50px 60px',
         // backgroundColor: '#5DDFED',
     },
 
@@ -81,41 +85,29 @@ class OutdoorStats extends React.Component  {
         return (
             <div style={styles.container}>
                 <p style={styles.header}> 
-                    Some of my interests include snowboarding, mountain biking, and backpacking.<br/>
                     Here are my some of my biggest outdoor accomplishments to date:
                 </p>
                 <OnVisible onChange={this.handleVisibility}>
                     <div style={{marginTop: 30}} >
                         <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
-                            <Grid item xs={12} md={3} style={styles.flexColumn} direction='column' justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Fastest snowboarding speed:</p>
+                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
+                                <p style={{...styles.content, flexGrow: 1}}>Biggest elevation drop mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
-                                    end={fastestSnowboardingValue}
+                                    end={elevationMountainBikingValue}
+                                    separator=","
                                     redraw={redraw}
                                     duration={duration}
-                                    // useEasing={true}
-                                    // useGrouping={true}
-                                    decimals={0}
-                                />
-                                <p style={styles.content}>MPH</p>
-                            </Grid>  
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Longest backpacking trip:</p>
-                                <CountUp
-                                    style={styles.countUp}
-                                    start={start}
-                                    end={longestBackpackingValue}
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={true}
+                                    useEasing={false}
                                     useGrouping={true}
+                                    decimal=","
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Days</p>
-                            </Grid>  
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
+                                <p style={styles.content}>Feet</p>
+                                <img src={MountainSvg} height={65} />
+                            </Grid> 
+                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
                                 <p style={{...styles.content, flexGrow: 1}}>Longest distance mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
@@ -123,27 +115,43 @@ class OutdoorStats extends React.Component  {
                                     end={distanceMountainBikingValue}
                                     redraw={redraw}
                                     duration={duration}
-                                    useEasing={true}
+                                    useEasing={false}
                                     useGrouping={true}
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Miles</p>
+                                <img src={MountainBikingPng} height={65} />
                             </Grid> 
-                            <Grid item xs={12} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Biggest elevation drop mountain biking:</p>
+                            <Grid item xs={12} sm={6} md={3} style={styles.flexColumn} direction='column' justify='center' alignItems='center' >
+                                <p style={{...styles.content, flexGrow: 1}}>Fastest snowboarding speed:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
-                                    end={elevationMountainBikingValue}
+                                    end={fastestSnowboardingValue}
                                     redraw={redraw}
-                                    duration={duration - 2}
-                                    useEasing={true}
+                                    duration={duration}
+                                    useEasing={false}
                                     useGrouping={true}
-                                    decimal=","
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Feet</p>
-                            </Grid> 
+                                <p style={styles.content}>Mph</p>
+                                <img src={SnowPng} height={65} />
+                            </Grid>  
+                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
+                                <p style={{...styles.content, flexGrow: 1}}>Longest backpacking trip:</p>
+                                <CountUp
+                                    style={styles.countUp}
+                                    start={start}
+                                    end={longestBackpackingValue}
+                                    redraw={redraw}
+                                    duration={duration}
+                                    useEasing={false}
+                                    useGrouping={true}
+                                    decimals={0}
+                                />
+                                <p style={styles.content}>Days</p>
+                                <img src={BackpackerPng} height={65} />
+                            </Grid>  
                         </Grid>
                     </div>
                 </OnVisible>

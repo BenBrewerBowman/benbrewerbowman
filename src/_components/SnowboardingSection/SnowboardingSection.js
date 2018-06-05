@@ -166,7 +166,7 @@ const SnowboardingSection = (props) => (
         <div style={{marginTop: -50, height: 440}} >
             <h1 style={{marginTop: 110, textAlign: 'center'}}>  
                 You can catch me shredding some fresh powder in the winter... <br/> 
-                or cracking a cold one in the mountains during the summer!
+                or cracking a cold one in the mountains in the summer!
             </h1>
             <div style={{ display: 'flex', flexDirection: 'row-reverse', marginRight: '15%' }} >
                 <svg style={{marginTop: 100, transform: 'rotate(-45deg)'}} width="300" enable-background="new 0 0 389.722 229.551" viewBox="0 0 389.722 229.551" xmlns="http://www.w3.org/2000/svg">
