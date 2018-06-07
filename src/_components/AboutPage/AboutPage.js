@@ -3,12 +3,13 @@ import Grid from 'material-ui/Grid';
 import ProfilePic from './about-img.png';
 import { SnowboardingSection } from '../SnowboardingSection';
 import { OutdoorStats } from '../OutdoorStats';
+import { MottoBanner } from '../MottoBanner';
 
 
 const styles = {
 
     container: {
-        padding: '30px 50px',
+        padding: '30px 50px 50px 50px',
         // backgroundColor: '#5DDFED',
     },
 
@@ -16,6 +17,12 @@ const styles = {
         textAlign: 'center',
         marginBottom: 20,
         fontSize: 42
+    },
+
+    paragraphHeader: {
+        textAlign: 'center',
+        fontSize: 20,
+        marginBottom: 10
     },
 
     content: {
@@ -29,7 +36,6 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         // justifyContent: 'center',
-        marginBottom: 30
     },
 
     skillItem: {
@@ -53,31 +59,41 @@ const AboutPage = (props) => (
                 <Grid item xs={12} md={6} style={styles.centerChildren} >
                     <div style={styles.centerChildren} >
                         {/* <h1 style={styles.header}> Hey! I'm Ben </h1> */}
-                        <p style={styles.content}>  
+                        <p style={styles.content}> 
+                            <p style={styles.paragraphHeader}> 
+                                About me
+                            </p> 
                             I am a full-stack software developer with a passion for working on new and exciting projects.
                             I graduated with a B.S. in Mechatronics Engineering (Summa Cum Laude) from UNC Asheville, and live in Salt Lake City, UT.
-                            I have experience developing for both startups and corporations, as well as some side projects of my own.
-                            If it's innovative, novel, or challenging, it already has my attention. 
+                            I have experience developing for both startups and larger companies, as well as some side projects of my own.
+                            If it ecourages innovation, novelty, and a challenge, it already has my attention!
                             <br/>
                             <br/>
-                            My favorite project to date involved developing adaptive recreation software to assist those with physical disabilities defy their limitations. 
-                            My team and I developed drive-by-wire technology to control a "mountain trike" to allow the rider to independently
-                            Imagi
+                            <p style={styles.paragraphHeader}> 
+                                Why I became a software developer
+                            </p>
+                            My favorite project to date involved developing adaptive recreation software to assist those with physical disabilities in pursuing outdoor recreation. 
+                            My team and I developed drive-by-wire robotic technology to control a "mountain trike", allowing the rider to independently enjoy the outdoors.
+                            The trike allowed the user to go places they've never gone before and increase their mobile independence.
+                            Those once confined to urban pavement could now experience hiking or biking with their family for maybe the first time ever.
+                            This was both an innovative and meaningful project which ultimately inspired me to make the transition into the exciting world of software development.
+                            {/* <br/>
                             <br/>
-                            <br/>
-
+                            <p style={styles.paragraphHeader}> 
+                                Issues I care about
+                            </p>
                             Environmental sustainability and conservation are two important issues to me. 
-                            Anything that helps us conserve and reduce our ecological footprint has both my interest and support.
-                            sWhether it's improving water
-                            We only have one earth, let's take care of it!
+                            Anything that helps us conserve and reduce our ecological footprint has my unwavering support.
+                            Whether it's recycling, driving less, or something as simple as reusable bags, we can improve 
+                            
 
-                            Some of my interests include snowboarding, mountain biking, and backpacking.<br/>
+                            Some of my interests include snowboarding, mountain biking, and backpacking.<br/> */}
                         </p>
-                        
                     </div>
                 </Grid>
             </Grid>
         </div>
+        <MottoBanner />
         <OutdoorStats />
         <SnowboardingSection/>
     </div>

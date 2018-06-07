@@ -11,7 +11,7 @@ import BackpackerPng from './backpacker.svg';
 const styles = {
 
     container: {
-        padding: '0px 60px 50px 60px',
+        padding: '80px 60px',
         // backgroundColor: '#5DDFED',
     },
 
@@ -75,7 +75,7 @@ class OutdoorStats extends React.Component  {
         const {redraw} = this.state;
 
         const start = 0;
-        const duration = 3;
+        const duration = 2.5;
         const fastestSnowboardingValue = 57;
         const longestBackpackingValue = 27;
         const elevationMountainBikingValue = 5800;
