@@ -13,6 +13,7 @@ const styles = {
         backgroundSize: '100% 100%',
         backgroundPosition: "center",
         color: 'white',
+        // margin: 'auto'
         // position: 'relative',
         // left: '50%'
         // padding: '30px 50px',
@@ -23,11 +24,16 @@ const styles = {
         // position: 'relative',
         // top: '50%',
         // transform: 'translateY(-50%)'
-        textAlign: 'center',
-        // margin: "30px 0px",
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         width: '100vw',
-        maxWidth: 800,
-        margin: 'auto',
+        textAlign: 'center',
+        margin: "0px",
+        // width: '100vw',
+        // maxWidth: 800,
+        // margin: 'auto',
         paddingTop: '30px',
         paddingBottom: '30px'
 
@@ -38,7 +44,8 @@ const styles = {
 
     content: {
         fontSize: 16,
-        // margin: '0px 20px',
+        maxWidth: 800,
+        padding: '0px 20px',
         // textAlign: 'center',
         
         
@@ -54,7 +61,7 @@ const styles = {
 
 
 const MottoBanner = (props) => (
-    <div style={styles.container} >
+    <div id={props.id} style={styles.container} >
         <div style={styles.centerContent}>
             <h1 style={styles.text}> 
                 When I'm not developing, I'm outside on some adventure!

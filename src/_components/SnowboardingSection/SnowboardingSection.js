@@ -159,7 +159,7 @@ const SnowboardingSection = (props) => (
             zIndex: -1,
             position: 'absolute', 
             marginTop: -100,
-            minWidth: 700
+            minWidth: 900
             }}
             height='500px'
             width='100%'

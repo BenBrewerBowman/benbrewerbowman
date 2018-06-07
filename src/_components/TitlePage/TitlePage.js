@@ -120,13 +120,13 @@ const TitlePage = () => (
             }}
             style={{
               // backgroundColor: '#1DE9B6',
-              background: 'linear-gradient(#1DE9B6 40%, Whitesmoke )',
+              background: 'linear-gradient(#1DE9B6 35%, Whitesmoke 75%)',
               zIndex: -1,
               position: 'absolute',
               top: 0,
               left: 0
             }}
-            height='110vh'
+            height='160vh'
             width='100%'
           />
           <div style={{color: 'black', zIndex: 100, textAlign: 'center', fontFamily: 'Montserrat, sans-serif'}}> 

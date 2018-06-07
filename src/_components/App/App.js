@@ -6,6 +6,9 @@ import { Footer } from '../Footer';
 import { ContactPage } from '../ContactPage';
 import { PhotosPage } from '../PhotosPage/PhotosPage';
 import { AboutPage } from '../AboutPage';
+import { SnowboardingSection } from '../SnowboardingSection';
+import { OutdoorStats } from '../OutdoorStats';
+import { MottoBanner } from '../MottoBanner';
 
 const App = () => (
   <div>
@@ -13,6 +16,9 @@ const App = () => (
     <TitlePage />
     <AboutPage id='about-page' />
     <SkillsPage id='skills-page' />
+    <MottoBanner id='interests-page' />
+    <OutdoorStats />
+    <SnowboardingSection/>
     <PhotosPage id='photos-page' />
     <ContactPage id='contact-page' />
     <Footer />

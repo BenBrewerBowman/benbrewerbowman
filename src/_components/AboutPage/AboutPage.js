@@ -1,9 +1,6 @@
 import React from 'react';
 import Grid from 'material-ui/Grid';
 import ProfilePic from './about-img.png';
-import { SnowboardingSection } from '../SnowboardingSection';
-import { OutdoorStats } from '../OutdoorStats';
-import { MottoBanner } from '../MottoBanner';
 
 
 const styles = {
@@ -51,8 +48,8 @@ const AboutPage = (props) => (
     <div id={props.id} > 
         <div style={styles.container} >
             <h1 style={styles.header}> Hey I'm Ben! </h1>
-            <Grid style={{marginTop: 30}} container spacing={24} direction='row-reverse' alignItems='flex-start' justify='center'  > 
-                <Grid item xs={12} md={6} style={{...styles.centerChildren, marginTop: 0}} justify='center' alignItems='flex-start' >
+            <Grid style={{marginTop: 30}} container spacing={24} direction='row-reverse' alignItems='center' justify='center'  > 
+                <Grid item xs={12} md={6} style={{...styles.centerChildren, marginTop: 0}} justify='center' alignItems='center' >
                     <img src={ProfilePic} style={{ width: 300, height: 300, paddingBottom: 12}} />
                     <button style={{marginTop: 30}}class="ui blue inverted button">View Resume</button>
                 </Grid>           
@@ -77,25 +74,11 @@ const AboutPage = (props) => (
                             The trike allowed the user to go places they've never gone before and increase their mobile independence.
                             Those once confined to urban pavement could now experience hiking or biking with their family for maybe the first time ever.
                             This was both an innovative and meaningful project which ultimately inspired me to make the transition into the exciting world of software development.
-                            {/* <br/>
-                            <br/>
-                            <p style={styles.paragraphHeader}> 
-                                Issues I care about
-                            </p>
-                            Environmental sustainability and conservation are two important issues to me. 
-                            Anything that helps us conserve and reduce our ecological footprint has my unwavering support.
-                            Whether it's recycling, driving less, or something as simple as reusable bags, we can improve 
-                            
-
-                            Some of my interests include snowboarding, mountain biking, and backpacking.<br/> */}
                         </p>
                     </div>
                 </Grid>
             </Grid>
         </div>
-        <MottoBanner />
-        <OutdoorStats />
-        <SnowboardingSection/>
     </div>
 );
 

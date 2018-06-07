@@ -49,17 +49,20 @@ class NavigationDesktop extends React.Component {
     }
 
     render() {
-        const offsetScroll = -30;
+        const offsetScroll = -60;
 
         return(
             <div style={styles.navBar}>
                 <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem}>ABOUT</h3>
+                    <h3 style={styles.navItem}>ABOUT ME</h3>
                 </Link>
-                <h3 style={styles.navItem}>ISSUES</h3>
                 <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 style={styles.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
                 </Link>
+                <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                    <h3 style={styles.navItem}>INTERESTS</h3>
+                </Link>
+
                 <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 style={styles.navItem}>GALLERY</h3>
                 </Link>            

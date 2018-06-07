@@ -22,13 +22,13 @@ const styles = {
     },
 
     countUp: {
-        fontSize: 32,
+        fontSize: 36,
         marginBottom: 'auto'
     },
 
     content: {
         marginTop: 10,
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center'
     },
@@ -80,6 +80,8 @@ class OutdoorStats extends React.Component  {
         const longestBackpackingValue = 27;
         const elevationMountainBikingValue = 5800;
         const distanceMountainBikingValue = 37;
+
+        const imgHeight = 75;
         
 
         return (
@@ -105,7 +107,7 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Feet</p>
-                                <img src={MountainSvg} height={65} />
+                                <img src={MountainSvg} height={imgHeight} />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
                                 <p style={{...styles.content, flexGrow: 1}}>Longest distance mountain biking:</p>
@@ -120,7 +122,7 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Miles</p>
-                                <img src={MountainBikingPng} height={65} />
+                                <img src={MountainBikingPng} height={imgHeight} />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={3} style={styles.flexColumn} direction='column' justify='center' alignItems='center' >
                                 <p style={{...styles.content, flexGrow: 1}}>Fastest snowboarding speed:</p>
@@ -135,7 +137,7 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Mph</p>
-                                <img src={SnowPng} height={65} />
+                                <img src={SnowPng} height={imgHeight} />
                             </Grid>  
                             <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
                                 <p style={{...styles.content, flexGrow: 1}}>Longest backpacking trip:</p>
@@ -150,7 +152,7 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p style={styles.content}>Days</p>
-                                <img src={BackpackerPng} height={65} />
+                                <img src={BackpackerPng} height={imgHeight} />
                             </Grid>  
                         </Grid>
                     </div>
