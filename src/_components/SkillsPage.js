@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import OnVisible from 'react-on-visible';
-import Grow from 'material-ui/transitions/Grow';
-import Zoom from 'material-ui/transitions/Zoom';
+import Grow from '@material-ui/core/Grow';
+import Zoom from '@material-ui/core/Zoom';
 
 
 const styles = {

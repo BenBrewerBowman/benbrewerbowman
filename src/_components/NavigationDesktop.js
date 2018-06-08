@@ -74,4 +74,4 @@ class NavigationDesktop extends React.Component {
     }
 }
 
-export default NavigationDesktop;
+export { NavigationDesktop };

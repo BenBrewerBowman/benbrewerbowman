@@ -2,18 +2,18 @@ import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
-import BryceCanyon from './img/bryce-canyon.jpg';
-import CapitolReef from './img/capitol-reef.jpg';
-import DelicateArch from './img/delicate-arch.jpg';
-import MountainBike from './img/mountain-bike.jpg';
-import RedCastleUpper from './img/red-castle-upper.jpg';
-import RedCastleBen from './img/red-castle-ben.jpg';
-import RedCastle from './img/red-castle.jpg';
-import RockyMountainLake from './img/rocky-mountain-lake.jpg';
-import Squirrel from './img/squirrel.jpg';
-import Sunset from './img/sunset.jpg';
-import Waterfall from './img/waterfall.jpg';
-import YellowMarmot from './img/yellow-marmot.jpg';
+import BryceCanyon from '../_img/bryce-canyon.jpg';
+import CapitolReef from '../_img/capitol-reef.jpg';
+import DelicateArch from '../_img/delicate-arch.jpg';
+import MountainBike from '../_img/mountain-bike.jpg';
+import RedCastleUpper from '../_img/red-castle-upper.jpg';
+import RedCastleBen from '../_img/red-castle-ben.jpg';
+import RedCastle from '../_img/red-castle.jpg';
+import RockyMountainLake from '../_img/rocky-mountain-lake.jpg';
+import Squirrel from '../_img/squirrel.jpg';
+import Sunset from '../_img/sunset.jpg';
+import Waterfall from '../_img/waterfall.jpg';
+import YellowMarmot from '../_img/yellow-marmot.jpg';
 
 
 const styles = {

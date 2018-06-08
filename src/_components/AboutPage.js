@@ -1,6 +1,6 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
-import ProfilePic from './about-img.png';
+import Grid from '@material-ui/core/Grid';
+import ProfilePic from '../_img/about-img.png';
 
 
 const styles = {

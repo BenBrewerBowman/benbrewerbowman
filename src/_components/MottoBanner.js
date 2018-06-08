@@ -1,5 +1,5 @@
 import React from 'react';
-import SunsetMountainsJPG from './sunset-mountains.jpg';
+import SunsetMountainsJPG from '../_img/sunset-mountains.jpg';
 
 
 const styles = {

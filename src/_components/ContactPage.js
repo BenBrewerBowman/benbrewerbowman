@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import qs from 'qs';
-import Slide from 'material-ui/transitions/Slide';
-import Snackbar from 'material-ui/Snackbar';
-import IconButton from 'material-ui/IconButton';
+import Slide from '@material-ui/core/Slide';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import OnVisible from 'react-on-visible';
 

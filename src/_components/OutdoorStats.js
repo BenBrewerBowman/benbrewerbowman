@@ -1,11 +1,11 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
+import Grid from '@material-ui/core/Grid';
 import CountUp, { startAnimation } from 'react-countup';
 import OnVisible from 'react-on-visible';
-import MountainBikingPng from './mountain-biking.png';
-import SnowPng from './snow.png';
-import MountainSvg from './mountain.svg';
-import BackpackerPng from './backpacker.svg';
+import MountainBikingPng from '../_img/mountain-biking.png';
+import SnowPng from '../_img/snow.png';
+import MountainSvg from '../_img/mountain.svg';
+import BackpackerPng from '../_img/backpacker.svg';
 
 
 const styles = {
