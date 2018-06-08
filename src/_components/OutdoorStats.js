@@ -93,7 +93,7 @@ class OutdoorStats extends React.Component  {
                     <div style={{marginTop: 30}} >
                         <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
                             <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Biggest elevation drop mountain biking:</p>
+                                <p style={{...styles.content, flexGrow: 1}}>Most elevation drop mountain biking:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
@@ -110,7 +110,7 @@ class OutdoorStats extends React.Component  {
                                 <img src={MountainSvg} height={imgHeight} />
                             </Grid> 
                             <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Longest distance mountain biking:</p>
+                                <p style={{...styles.content, flexGrow: 1}}>Longest mountain bike ride:</p>
                                 <CountUp
                                     style={styles.countUp}
                                     start={start}
