@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link, Events } from 'react-scroll'
+import { Link, Events, animateScroll as scroll, animateScroll } from 'react-scroll'
 import LogoImg from '../_img/logo.svg';
+import { withStyles } from '@material-ui/core/styles';
+import grey from '@material-ui/core/colors/purple';
 
 
-const styles = {
+const style = theme => ({
+
     navBar: {
         position: 'fixed', 
         top: 0, 
-        
         float: 'right', 
         width: '100%', 
         height: 60, 
@@ -20,17 +22,27 @@ const styles = {
     },
 
     navItem: {
-        margin: 20,
+        marginRight: 40,
         color: 'black', 
-        '&:hover': { color: 'red' }
+        '&:hover': {
+            borderBottom: '3px solid black',
+            cursor: 'pointer'
+        }
     },
 
     logoContainer: {
         marginLeft: 60,
-        height: 45,
         flexGrow: 1
     },
-};
+
+    logo: {
+        height: 45,
+        '&:hover': {
+            cursor: 'pointer'
+        }
+    }
+});
+
 
 class NavigationDesktop extends React.Component {
 
@@ -51,37 +63,42 @@ class NavigationDesktop extends React.Component {
         Events.scrollEvent.remove('end');
     }
     
-    handleHover() {
-
+    scrollToTop() {
+        const scroll = animateScroll;
+        scroll.scrollToTop();
     }
 
     render() {
+        const { classes } = this.props;
+        console.log(classes);
         const offsetScroll = -60;
 
         return(
-            <div style={styles.navBar}>
-                <div style={styles.logoContainer}>
-                    <img src={LogoImg} height={styles.logoContainer.height} />
+            <div className={classes.navBar}>
+                <div className={classes.logoContainer}>
+                    <img src={LogoImg} className={classes.logo} onClick={this.scrollToTop} />
                 </div>
                 <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem}>ABOUT ME</h3>
+                    <h3 className={classes.navItem} >ABOUT ME</h3>
                 </Link>
                 <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
+                    <h3 className={classes.navItem} >SKILLS</h3>
                 </Link>
                 <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem}>INTERESTS</h3>
+                    <h3 className={classes.navItem} >INTERESTS</h3>
                 </Link>
 
                 <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={styles.navItem}>GALLERY</h3>
+                    <h3 className={classes.navItem} >GALLERY</h3>
                 </Link>            
                 <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                    <h3 style={{...styles.navItem, marginRight: 50}}>CONTACT</h3>
+                    <h3 className={classes.navItem} >CONTACT</h3>
                 </Link>
             </div>
         );
     }
 }
 
-export { NavigationDesktop };
+
+const NavigationDesktopWithStyles = withStyles(style)(NavigationDesktop);
+export { NavigationDesktopWithStyles as NavigationDesktop };

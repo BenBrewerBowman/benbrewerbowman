@@ -6,7 +6,7 @@ import ProfilePic from '../_img/about-img.png';
 const styles = {
 
     container: {
-        padding: '30px 50px 50px 50px',
+        padding: '30px 7vw 50px 7vw',
         // backgroundColor: '#5DDFED',
     },
 

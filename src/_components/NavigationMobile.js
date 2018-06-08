@@ -35,12 +35,12 @@ const styles = {
         '&:hover': { color: 'red' }
     },
     logoContainer: {
-        marginLeft: 30,
+        marginLeft: 10,
         height: 45,
         flexGrow: 1
     },
     menuContainer: {
-        marginRight: 30
+        marginRight: 5
     }
 };
 
