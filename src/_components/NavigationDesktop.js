@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Events } from 'react-scroll'
+import LogoImg from '../_img/logo.svg';
 
 
 const styles = {
@@ -22,7 +23,13 @@ const styles = {
         margin: 20,
         color: 'black', 
         '&:hover': { color: 'red' }
-    }
+    },
+
+    logoContainer: {
+        marginLeft: 60,
+        height: 45,
+        flexGrow: 1
+    },
 };
 
 class NavigationDesktop extends React.Component {
@@ -53,6 +60,9 @@ class NavigationDesktop extends React.Component {
 
         return(
             <div style={styles.navBar}>
+                <div style={styles.logoContainer}>
+                    <img src={LogoImg} height={styles.logoContainer.height} />
+                </div>
                 <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 style={styles.navItem}>ABOUT ME</h3>
                 </Link>
