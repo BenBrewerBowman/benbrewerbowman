@@ -18,8 +18,14 @@ const styles = {
 
     header: {
         textAlign: 'center',
-        marginBottom: 30,
+        marginBottom: 20,
         fontSize: 36
+    },
+
+    subHeader: {
+        textAlign: 'center',
+        marginBottom: 20,
+        fontSize: 16
     },
 
     form: {
@@ -117,6 +123,9 @@ class ContactPage extends React.Component {
             <div style={{backgroundColor: 'whiteSmoke'}} id={this.props.id} > 
                 <div style={styles.container} >
                     <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
+                    <p style={styles.subHeader}> 
+                        Want to work on a project together? Or maybe just want to say hey? Feel free to reach out.
+                    </p>
                     <OnVisible onChange={this.handleVisibility}>
                         <Slide in={visible} direction="left" style={{ transitionDelay: visible? 500 : 0 }} {...(visible ? { timeout: 1000 } : {})} >
                             <Form style={styles.form} onSubmit={this.handleSubmit} error={submitError}>

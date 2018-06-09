@@ -96,7 +96,7 @@ class NavigationMobile extends React.Component {
                                 aria-owns={isMenuOpen ? 'menu-list-grow' : null}
                                 aria-haspopup="true"
                             >
-                                <MenuIcon color='black' style={{ fontSize: 30 }}/>
+                                <MenuIcon style={{ color: 'black',fontSize: 30 }}/>
                             </IconButton>
                         </div>
                     </Target>

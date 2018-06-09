@@ -51,7 +51,7 @@ const AboutPage = (props) => (
             <Grid style={{marginTop: 30}} container spacing={24} direction='row-reverse' alignItems='center' justify='center'  > 
                 <Grid item xs={12} md={6} style={{...styles.centerChildren, marginTop: 0}} justify='center' alignItems='center' >
                     <img src={ProfilePic} style={{ width: 300, height: 300, paddingBottom: 12}} />
-                    <button style={{marginTop: 30}}class="ui blue inverted button">View Resume</button>
+                    {/* <button style={{marginTop: 30}}class="ui blue inverted button">View Experience</button> */}
                 </Grid>           
                 <Grid item xs={12} md={6} style={styles.centerChildren} >
                     <div style={styles.centerChildren} >

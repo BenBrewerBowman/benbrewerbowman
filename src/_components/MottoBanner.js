@@ -6,8 +6,7 @@ const styles = {
 
     container: {
         width: '100%',
-        minWidth: 800,
-        height: '100%',
+        minWidth: 900,
         backgroundImage: `url(${SunsetMountainsJPG})`,
         backgroundSize: '100% 100%',
         backgroundPosition: "left",
