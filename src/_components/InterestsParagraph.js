@@ -36,7 +36,7 @@ const styles = {
 
 
 
-const MottoBanner = (props) => (
+const InterestsParagraph = (props) => (
     <div id={props.id} style={styles.container} >
         <div style={styles.centerContent}>
             <h1 style={styles.text}> 
@@ -55,4 +55,4 @@ const MottoBanner = (props) => (
     </div>
 );
 
-export { MottoBanner };
+export { InterestsParagraph };

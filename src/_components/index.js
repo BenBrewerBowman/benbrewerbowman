@@ -2,7 +2,7 @@ export * from './AboutPage';
 export * from './App';
 export * from './ContactPage';
 export * from './Footer';
-export * from './MottoBanner';
+export * from './InterestsParagraph';
 export * from './NavigationDesktop';
 export * from './NavigationMobile';
 export * from './OutdoorStats';

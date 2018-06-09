@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/purple';
 
 
-const style = theme => ({
+const styles = theme => ({
 
     navBar: {
         position: 'fixed', 
@@ -43,19 +43,15 @@ const style = theme => ({
     }
 });
 
-
 class NavigationDesktop extends React.Component {
 
     componentDidMount() {
-
         Events.scrollEvent.register('begin', function () {
           console.log("begin", arguments);
         });
-    
         Events.scrollEvent.register('end', function () {
           console.log("end", arguments);
         });
-    
     }
 
     componentWillUnmount() {
@@ -70,7 +66,6 @@ class NavigationDesktop extends React.Component {
 
     render() {
         const { classes } = this.props;
-        console.log(classes);
         const offsetScroll = -60;
 
         return(
@@ -100,5 +95,5 @@ class NavigationDesktop extends React.Component {
 }
 
 
-const NavigationDesktopWithStyles = withStyles(style)(NavigationDesktop);
+const NavigationDesktopWithStyles = withStyles(styles)(NavigationDesktop);
 export { NavigationDesktopWithStyles as NavigationDesktop };

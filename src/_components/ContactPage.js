@@ -5,8 +5,8 @@ import Slide from '@material-ui/core/Slide';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import { withStyles } from '@material-ui/core/styles';
 import OnVisible from 'react-on-visible';
-
 import { Button, Form, Message } from 'semantic-ui-react';
 
 
@@ -37,8 +37,16 @@ const styles = {
 
     field: {
         width: '90vw',
-        maxWidth: 600
+        maxWidth: 600,
     },
+
+    textArea: {
+        minHeight: 100
+    },
+
+    centerText: {
+        textAlign: 'center'
+    }
 };
 
 
@@ -115,22 +123,24 @@ class ContactPage extends React.Component {
         this.setState({ submitSuccess: false });
     };
 
-
     render() {
+        const { classes } = this.props;
         const { name, senderEmail, subject, messageBody, submitSuccess, submitError, visible } = this.state;
 
         return (
-            <div style={{backgroundColor: 'whiteSmoke'}} id={this.props.id} > 
-                <div style={styles.container} >
-                    <h1 style={styles.header}> Don't be shy! Drop me a line! </h1>
-                    <p style={styles.subHeader}> 
+            <div id={this.props.id} > 
+                <div className={classes.container} >
+                    <h1 className={classes.header} > 
+                        Don't be shy! Drop me a line! 
+                    </h1>
+                    <p className={classes.subHeader} > 
                         Want to work on a project together? Or maybe just want to say hey? Feel free to reach out.
                     </p>
                     <OnVisible onChange={this.handleVisibility}>
                         <Slide in={visible} direction="left" style={{ transitionDelay: visible? 500 : 0 }} {...(visible ? { timeout: 1000 } : {})} >
-                            <Form style={styles.form} onSubmit={this.handleSubmit} error={submitError}>
+                            <Form className={classes.form} onSubmit={this.handleSubmit} error={submitError}>
                                 <Form.Input 
-                                    style={styles.field}
+                                    className={classes.field}
                                     required 
                                     label='Name' 
                                     placeholder='Ex. John Doe' 
@@ -139,7 +149,7 @@ class ContactPage extends React.Component {
                                     onChange={this.handleChange}
                                 />
                                 <Form.Input 
-                                    style={styles.field} 
+                                    className={classes.field}
                                     label='Your Email'
                                     placeholder='Ex. email-address@some-site.com'
                                     name='senderEmail'
@@ -147,7 +157,7 @@ class ContactPage extends React.Component {
                                     onChange={this.handleChange}
                                 />
                                 <Form.Input 
-                                    style={styles.field} 
+                                    className={classes.field}
                                     required
                                     label='Subject' 
                                     placeholder='Ex. Hey' 
@@ -157,7 +167,7 @@ class ContactPage extends React.Component {
                                 />
             
                                 <Form.TextArea 
-                                    style={{...styles.field, minHeight: 150}} 
+                                    className={`${classes.field} ${classes.textArea}`}
                                     autoHeight 
                                     required
                                     label='Message'
@@ -168,14 +178,14 @@ class ContactPage extends React.Component {
                                 <Button type='submit'>Submit</Button>
                                 <Slide in={submitError} direction="up" mountOnEnter unmountOnExit>
                                     <Message
-                                        style={{textAlign: 'center'}}
+                                        className={classes.centerText}
                                         error
                                         header='Error sending message'
                                         content={'Sorry for the inconvenience! We have been notified and will take care of this problem promptly!'}
                                     />
                                 </Slide>
                                 <Snackbar
-                                    style={{textAlign: 'center'}}
+                                    className={classes.centerText}
                                     anchorOrigin={{ vertical: 'bottom', horizontal: 'center'}}
                                     open={submitSuccess}
                                     autoHideDuration={6000}
@@ -204,4 +214,5 @@ class ContactPage extends React.Component {
     }
 };
 
-export { ContactPage };
+const ContactPageWithStyles = withStyles(styles) (ContactPage);
+export { ContactPageWithStyles as ContactPage };

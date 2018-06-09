@@ -10,7 +10,7 @@ import { PhotosPage } from './';
 import { AboutPage } from './';
 import { SnowboardingSection } from './';
 import { OutdoorStats } from './';
-import { MottoBanner } from './';
+import { InterestsParagraph } from './';
 
 const App = () => (
   <div>
@@ -23,7 +23,7 @@ const App = () => (
     <TitlePage />
     <AboutPage id='about-page' />
     <SkillsPage id='skills-page' />
-    <MottoBanner id='interests-page' />
+    <InterestsParagraph id='interests-page' />
     <OutdoorStats />
     <SnowboardingSection/>
     <PhotosPage id='photos-page' />
