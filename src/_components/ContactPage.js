@@ -10,7 +10,7 @@ import OnVisible from 'react-on-visible';
 import { Button, Form, Message } from 'semantic-ui-react';
 
 
-const styles = {
+const styles = theme => ({
 
     container: {
         padding: '50px 0px'
@@ -47,24 +47,20 @@ const styles = {
     centerText: {
         textAlign: 'center'
     }
-};
+});
 
 
 class ContactPage extends React.Component {
 
-    constructor (props) {
-        super(props);
-
-        this.state = { 
-            name: '',
-            senderEmail: '', 
-            subject: '', 
-            messageBody: '',
-            submitSuccess: false,
-            submitError: false,
-            visible: false
-        }
-    };
+    state = {
+        name: '',
+        senderEmail: '', 
+        subject: '', 
+        messageBody: '',
+        submitSuccess: false,
+        submitError: false,
+        visible: false
+    }
 
     handleVisibility = () => {
         if (!this.state.visible) {
@@ -132,7 +128,7 @@ class ContactPage extends React.Component {
                 <div className={classes.container} >
                     <h1 className={classes.header} > 
                         Don't be shy! Drop me a line! 
-                    </h1>
+                        </h1>
                     <p className={classes.subHeader} > 
                         Want to work on a project together? Or maybe just want to say hey? Feel free to reach out.
                     </p>

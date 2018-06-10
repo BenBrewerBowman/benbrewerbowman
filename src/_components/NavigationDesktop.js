@@ -95,5 +95,5 @@ class NavigationDesktop extends React.Component {
 }
 
 
-const NavigationDesktopWithStyles = withStyles(styles)(NavigationDesktop);
+const NavigationDesktopWithStyles = withStyles(styles) (NavigationDesktop);
 export { NavigationDesktopWithStyles as NavigationDesktop };
