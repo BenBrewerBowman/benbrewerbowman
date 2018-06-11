@@ -14,9 +14,11 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import LogoImg from '../_img/logo.svg';
+import { withStyles } from '@material-ui/core/styles';
 
 
-const styles = {
+const styles = theme => ({
+
     navBar: {
         position: 'fixed', 
         top: 0, 
@@ -35,14 +37,20 @@ const styles = {
         '&:hover': { color: 'red' }
     },
     logoContainer: {
-        marginLeft: 10,
-        height: 45,
+        marginLeft: '5vw',
         flexGrow: 1
+    },
+    logo: {
+        height: 45,
     },
     menuContainer: {
         marginRight: 5
+    },
+    menuIcon: {
+        color: 'black',
+        fontSize: 30 
     }
-};
+});
 
 class NavigationMobile extends React.Component {
 
@@ -77,18 +85,19 @@ class NavigationMobile extends React.Component {
     };
     
     render() {
+        const { classes } = this.props;
         const offsetScroll = -60;
         const { isMenuOpen } = this.state;
 
         return(
-            <div style={styles.navBar}>
-                <div style={styles.logoContainer}>
-                    <img src={LogoImg} height={styles.logoContainer.height} />
+            <div className={classes.navBar} >
+                <div className={classes.logoContainer} >
+                    <img src={LogoImg} className={classes.logo} />
                 </div>
                 <Manager>
                     <Target>
                         <div 
-                            style={styles.menuContainer}
+                            className={classes.menuContainer}
                             ref={node => {this.target = node;}} 
                         >
                             <IconButton
@@ -96,7 +105,7 @@ class NavigationMobile extends React.Component {
                                 aria-owns={isMenuOpen ? 'menu-list-grow' : null}
                                 aria-haspopup="true"
                             >
-                                <MenuIcon style={{ color: 'black',fontSize: 30 }}/>
+                                <MenuIcon className={classes.menuIcon} />
                             </IconButton>
                         </div>
                     </Target>
@@ -110,27 +119,27 @@ class NavigationMobile extends React.Component {
                             <MenuList role="menu">
                                 <MenuItem onClick={this.handleClose}>
                                     <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                                        <h3 style={styles.navItem} onMouseOver={this.handleHover}>ABOUT ME</h3>
+                                        <h3 className={classes.navItem} onMouseOver={this.handleHover}>ABOUT ME</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
                                     <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                                        <h3 style={styles.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
+                                        <h3 className={classes.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
                                     <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                                        <h3 style={styles.navItem}>INTERESTS</h3>
+                                        <h3 className={classes.navItem} >INTERESTS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
                                     <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                                        <h3 style={styles.navItem}>GALLERY</h3>
+                                        <h3 className={classes.navItem}>GALLERY</h3>
                                     </Link> 
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
                                     <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
-                                        <h3 style={{...styles.navItem, marginRight: 50}}>CONTACT</h3>
+                                        <h3 className={classes.navItem} >CONTACT</h3>
                                     </Link>
                                 </MenuItem>
                             </MenuList>
@@ -144,4 +153,5 @@ class NavigationMobile extends React.Component {
     }
 }
 
-export { NavigationMobile };
+const NavigationMobileWithStyles = withStyles(styles) (NavigationMobile);
+export { NavigationMobileWithStyles as NavigationMobile };

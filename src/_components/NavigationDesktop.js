@@ -20,7 +20,6 @@ const styles = theme => ({
         letterSpacing: 1.5,
         backgroundColor: '#1DE9B6'
     },
-
     navItem: {
         marginRight: 40,
         color: 'black', 
@@ -29,12 +28,10 @@ const styles = theme => ({
             cursor: 'pointer'
         }
     },
-
     logoContainer: {
         marginLeft: 60,
         flexGrow: 1
     },
-
     logo: {
         height: 45,
         '&:hover': {

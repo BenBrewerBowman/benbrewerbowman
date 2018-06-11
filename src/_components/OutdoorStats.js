@@ -6,33 +6,36 @@ import MountainBikingPng from '../_img/mountain-biking.png';
 import SnowPng from '../_img/snow.png';
 import MountainSvg from '../_img/mountain.svg';
 import BackpackerPng from '../_img/backpacker.svg';
+import { withStyles } from '@material-ui/core/styles';
 
 
-const styles = {
+const styles = theme => ({
 
     container: {
         padding: '80px 60px',
         // backgroundColor: '#5DDFED',
     },
-
     header: {
         textAlign: 'center',
         marginBottom: 20,
         fontSize: 20
     },
-
+    grid: {
+        marginTop: 30
+    },
     countUp: {
         fontSize: 36,
         marginBottom: 'auto'
     },
-
     content: {
         marginTop: 10,
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center'
     },
-
+    flexGrow: {
+        flexGrow: 1
+    },
     flexColumn: {
         display: 'flex',
         flexDirection: 'column',
@@ -40,31 +43,29 @@ const styles = {
         justifyContent: 'flex-end',
         marginBottom: 30,
     },
-
     flexRow: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 30
     },
-
     skillItem: {
         maxHeight: 200
     },
-};
+    img: {
+        height: 75
+    }
+});
+
 
 class OutdoorStats extends React.Component  {
 
-    constructor (props) {
-        super(props);
-
-        this.state = {
-            redraw: false
-        }
+    state = {
+        redraw: false
     };
 
     handleVisibility = () => {
-        if (!this.state.visible) {
+        if (!this.state.redraw) {
             this.setState({
                 redraw: true
             });
@@ -72,30 +73,27 @@ class OutdoorStats extends React.Component  {
     }
 
     render() {
-        const {redraw} = this.state;
-
+        const { classes } = this.props;
+        const { redraw } = this.state;
         const start = 0;
         const duration = 2.5;
         const fastestSnowboardingValue = 57;
         const longestBackpackingValue = 27;
         const elevationMountainBikingValue = 5800;
         const distanceMountainBikingValue = 37;
-
-        const imgHeight = 75;
         
-
         return (
-            <div style={styles.container}>
-                <p style={styles.header}> 
+            <div className={classes.container} >
+                <p className={classes.header} > 
                     Here are my some of my biggest outdoor accomplishments to date:
                 </p>
                 <OnVisible onChange={this.handleVisibility}>
-                    <div style={{marginTop: 30}} >
+                    <div className={classes.grid} >
                         <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
-                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Most elevation drop mountain biking:</p>
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} justify='center' alignItems='center' >
+                                <p className={`${classes.content} ${classes.flexGrow}`} >Most elevation drop mountain biking:</p>
                                 <CountUp
-                                    style={styles.countUp}
+                                    className={classes.countUp}
                                     start={start}
                                     end={elevationMountainBikingValue}
                                     separator=","
@@ -106,13 +104,13 @@ class OutdoorStats extends React.Component  {
                                     decimal=","
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Feet</p>
-                                <img src={MountainSvg} height={imgHeight} />
+                                <p className={classes.content} >Feet</p>
+                                <img className={classes.img} src={MountainSvg} />
                             </Grid> 
-                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Longest mountain bike ride:</p>
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} justify='center' alignItems='center' >
+                                <p className={`${classes.content} ${classes.flexGrow}`}>Longest mountain bike ride:</p>
                                 <CountUp
-                                    style={styles.countUp}
+                                    className={classes.countUp}
                                     start={start}
                                     end={distanceMountainBikingValue}
                                     redraw={redraw}
@@ -121,13 +119,13 @@ class OutdoorStats extends React.Component  {
                                     useGrouping={true}
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Miles</p>
-                                <img src={MountainBikingPng} height={imgHeight} />
+                                <p className={classes.content} >Miles</p>
+                                <img className={classes.img} src={MountainBikingPng} />
                             </Grid> 
-                            <Grid item xs={12} sm={6} md={3} style={styles.flexColumn} direction='column' justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Fastest snowboarding speed:</p>
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} direction='column' justify='center' alignItems='center' >
+                                <p className={`${classes.content} ${classes.flexGrow}`} >Fastest snowboarding speed:</p>
                                 <CountUp
-                                    style={styles.countUp}
+                                    className={classes.countUp}
                                     start={start}
                                     end={fastestSnowboardingValue}
                                     redraw={redraw}
@@ -136,13 +134,13 @@ class OutdoorStats extends React.Component  {
                                     useGrouping={true}
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Mph</p>
-                                <img src={SnowPng} height={imgHeight} />
+                                <p className={classes.content}>Mph</p>
+                                <img className={classes.img} src={SnowPng}  />
                             </Grid>  
-                            <Grid item xs={12} sm={6} md={3} style={{...styles.flexColumn, marginTop: 0}} justify='center' alignItems='center' >
-                                <p style={{...styles.content, flexGrow: 1}}>Longest backpacking trip:</p>
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn}  justify='center' alignItems='center' >
+                                <p className={`${classes.content} ${classes.flexGrow}`} >Longest backpacking trip:</p>
                                 <CountUp
-                                    style={styles.countUp}
+                                    className={classes.countUp}
                                     start={start}
                                     end={longestBackpackingValue}
                                     redraw={redraw}
@@ -151,8 +149,8 @@ class OutdoorStats extends React.Component  {
                                     useGrouping={true}
                                     decimals={0}
                                 />
-                                <p style={styles.content}>Days</p>
-                                <img src={BackpackerPng} height={imgHeight} />
+                                <p className={classes.content} >Days</p>
+                                <img className={classes.img} src={BackpackerPng} />
                             </Grid>  
                         </Grid>
                     </div>
@@ -162,4 +160,5 @@ class OutdoorStats extends React.Component  {
     }
 }
 
-export { OutdoorStats };
+const OutdoorStatsWithStyles = withStyles(styles) (OutdoorStats);
+export { OutdoorStatsWithStyles as OutdoorStats };
