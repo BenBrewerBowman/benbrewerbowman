@@ -78,7 +78,7 @@ class SkillsPage extends React.Component {
                     <h1 style={styles.header}> Developer Skills </h1>
                     <Zoom in={visible} style={{ transitionDelay: visible ? 2000 : 0 }}>
                         <h1 style={{textAlign: 'center', marginBottom: 20}}>
-                            This site was even built using React, NodeJS, and GraphQL!
+                            This site was even built using ReactJS!
                         </h1>
                     </Zoom>    
                     <Grid container spacing={24} alignItems='center' justify='center' >            
