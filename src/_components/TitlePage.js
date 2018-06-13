@@ -136,7 +136,7 @@ const TitlePage = () => (
             <h1 style={{marginTop: 10, fontSize: 36}}>
               Software Developer 
             </h1>
-            <Button style={{marginTop: 20}} color='#1DE9B6' href="https://github.com/BenBrewerBowman">
+            <Button style={{marginTop: 20}} href="https://github.com/BenBrewerBowman">
               View Github
             </Button>
           </div>

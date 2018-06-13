@@ -41,6 +41,7 @@ const styles = {
 
 
 const Skill = (props) => (
+  
     <Grid item xs={12} sm={6} md={3} style={styles.centerChildren}>
         <Grow
             in={props.visible}
@@ -55,11 +56,7 @@ const Skill = (props) => (
 
 class SkillsPage extends React.Component {
 
-    constructor (props) {
-        super(props);
-
-        this.state = {visible: false}
-    };
+    state = {visible: false};
 
     handleVisibility = () => {
         if (!this.state.visible) {
@@ -78,47 +75,49 @@ class SkillsPage extends React.Component {
                     <h1 style={styles.header}> Developer Skills </h1>
                     <Zoom in={visible} style={{ transitionDelay: visible ? 2000 : 0 }}>
                         <h1 style={{textAlign: 'center', marginBottom: 20}}>
-                            This site was even built using React, NodeJS, and GraphQL!
+                            This site was even built using ReactJS!
                         </h1>
-                    </Zoom>    
-                    <Grid container spacing={24} alignItems='center' justify='center' >            
-                        <Skill transitionDelay={0} visible>
-                            <img src={ReactSkillImg} width={175} height={175} />
-                        </Skill>
-                        <Skill transitionDelay={250} visible>
-                            <div style={styles.centerChildren}>
-                                <img style={{marginTop: 20}} src={GraphqlSkillImg} height={135} />
-                                <div style={{textAlign: 'center', fontSize: 42, marginTop: 10, color: '#E10098'}}>
-                                    GraphQL
-                                </div>
-                            </div>
-                        </Skill>
-                        <Skill transitionDelay={500} visible>
-                            <img src={PrismaSkillImg} width={280}/>
-                        </Skill>
-                        <Skill transitionDelay={750} visible>
-                            <img src={JavaSkillImg} height={200} />
-                        </Skill>
-                        <Skill transitionDelay={1750} visible>
-                            <img style={{marginTop: 25}} src={NodejsSkillImg} height={120} />
-                        </Skill>
-                        <Skill transitionDelay={1500} visible>
-                            <img src={JavascriptSkillImg} height={140} />
-                        </Skill>
-                        <Skill transitionDelay={1250} visible>
-                            <img src={GitSkillImg} width={200} />
-                        </Skill>
-                        <Skill transitionDelay={1000} visible>
-                            <div>
-                                <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF'}}>
-                                    React
-                                </div>
-                                <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF', marginTop: 30}}>
-                                    Native
-                                </div>
-                            </div>
-                        </Skill>
-                    </Grid>
+                    </Zoom>   
+                    <OnVisible onChange={this.handleVisibility}> 
+                      <Grid container spacing={24} alignItems='center' justify='center' >            
+                          <Skill transitionDelay={0} visible={visible} >
+                              <img src={ReactSkillImg} alt="ReactJS Logo" width={175} height={175} />
+                          </Skill>
+                          <Skill transitionDelay={250} visible={visible} >
+                              <div style={styles.centerChildren}>
+                                  <img style={{marginTop: 20}} src={GraphqlSkillImg} alt="GraphQL Logo" height={135} />
+                                  <div style={{textAlign: 'center', fontSize: 42, marginTop: 10, color: '#E10098'}}>
+                                      GraphQL
+                                  </div>
+                              </div>
+                          </Skill>
+                          <Skill transitionDelay={500} visible={visible} >
+                              <img src={PrismaSkillImg} alt="Prisma Logo" width={280}/>
+                          </Skill>
+                          <Skill transitionDelay={750} visible={visible} >
+                              <img src={JavaSkillImg} alt="Java Logo" height={200} />
+                          </Skill>
+                          <Skill transitionDelay={1750} visible={visible} >
+                              <img style={{marginTop: 25}} src={NodejsSkillImg} alt="NodeJS Logo" height={120} />
+                          </Skill>
+                          <Skill transitionDelay={1500} visible={visible} >
+                              <img src={JavascriptSkillImg} alt="JavaScript Logo" height={140} />
+                          </Skill>
+                          <Skill transitionDelay={1250} visible={visible} >
+                              <img src={GitSkillImg} alt="JavaScript Logo" width={200} />
+                          </Skill>
+                          <Skill transitionDelay={1000} visible={visible} >
+                              <div>
+                                  <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF'}}>
+                                      React
+                                  </div>
+                                  <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF', marginTop: 30}}>
+                                      Native
+                                  </div>
+                              </div>
+                          </Skill>
+                      </Grid>
+                    </OnVisible>
                 </div>
             </div>
         );
