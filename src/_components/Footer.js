@@ -27,7 +27,10 @@ const styles = theme => ({
 
     socialIcon: {
         margin: "0px 30px", 
-        color: 'black'
+        color: 'black',
+        '&:hover': {
+            color: 'black',
+        }
     },
 
     copyright: {
