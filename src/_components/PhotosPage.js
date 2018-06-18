@@ -1,7 +1,6 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
-
 import BryceCanyon from '../_img/bryce-canyon.jpg';
 import CapitolReef from '../_img/capitol-reef.jpg';
 import DelicateArch from '../_img/delicate-arch.jpg';
@@ -17,19 +16,29 @@ import YellowMarmot from '../_img/yellow-marmot.jpg';
 
 
 const styles = {
-
     container: {
         padding: '50px 0px',
         backgroundColor: 'whiteSmoke',
     },
-
+    flexColumn: {
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center'
+    },
     header: {
         textAlign: 'center',
         marginBottom: 10,
         fontSize: 36,
-        // backgroundColor: '#1DE9B6'
+    },
+    paragraph: {
+        textAlign: 'center', 
+        marginBottom: 30, 
+        maxWidth: 1000
     }
 }
+
+
 const photos = [
     { src: RedCastle, width: 4, height: 3 },
     { src: RockyMountainLake, width: 4, height: 3 },
@@ -48,55 +57,48 @@ const photos = [
 
 class PhotosPage extends React.Component {
 
-  constructor() {
-    super();
-    this.state = { 
+    state = { 
         currentImage: 0,
         lightboxIsOpen: false,
         numColumns: 3
     };
-    this.closeLightbox = this.closeLightbox.bind(this);
-    this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
-  }
 
-  openLightbox(event, obj) {
-    this.setState({
-      currentImage: obj.index,
-      lightboxIsOpen: true
-    });
-  }
+    openLightbox = (event, obj) => {
+        this.setState({
+            currentImage: obj.index,
+            lightboxIsOpen: true
+        });
+    }
 
-  closeLightbox() {
-    this.setState({
-      currentImage: 0,
-      lightboxIsOpen: false,
-    });
-  }
+    closeLightbox = () => {
+        this.setState({
+            currentImage: 0,
+            lightboxIsOpen: false,
+        });
+    }
 
-  gotoPrevious() {
-    this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
+    gotoPrevious = () => {
+        this.setState({
+            currentImage: this.state.currentImage - 1,
+        });
+    }
 
-  gotoNext() {
-    this.setState({
-      currentImage: this.state.currentImage + 1,
-    });
-  }
+    gotoNext = () => {
+        this.setState({
+            currentImage: this.state.currentImage + 1,
+        });
+    }
 
     componentDidMount() {
         this.handleResize();
-        window.addEventListener('resize',  this.handleResize.bind(this));
+        window.addEventListener('resize',  this.handleResize);
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.handleResize.bind(this));
+        window.removeEventListener("resize", this.handleResize);
     }
 
-    handleResize() {
+    handleResize = () => {
         if(window.innerWidth < 750) 
             this.setState({ numColumns: 2 });
         else
@@ -108,9 +110,9 @@ class PhotosPage extends React.Component {
 
         return (
             <div style={styles.container} id={this.props.id}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} >
+                <div style={styles.flexColumn} >
                     <h1 style={styles.header}> If you're not living life, you're not living right! </h1>
-                    <h3 style={{textAlign: 'center', marginBottom: 30, maxWidth: 1000}}>
+                    <h3 style={styles.paragraph}>
                         One of my favorite things to do in my free time is visit national parks, forests, and monuments.
                         These are some photos from some of my greatest experiences in both Colorado and Utah.
                         From the deserts of southern Utah to the rockies of Colorado, I am amazed by the beauty of the Western US.
