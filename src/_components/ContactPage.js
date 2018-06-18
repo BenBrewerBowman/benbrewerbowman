@@ -1,16 +1,14 @@
 import React from 'react';
 import Slide from '@material-ui/core/Slide';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 import OnVisible from 'react-on-visible';
-import { Button, Form, Message } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 
 
 const styles = theme => ({
     container: {
-        padding: '50px 0px'
+        padding: '50px 0px',
+        overflow: 'hidden'
     },
     header: {
         textAlign: 'center',
@@ -26,7 +24,8 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        
     },
     field: {
         width: '90vw',

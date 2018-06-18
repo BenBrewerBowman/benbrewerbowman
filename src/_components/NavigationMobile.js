@@ -1,14 +1,9 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import { Link, Events } from 'react-scroll';
 import { Manager, Target, Popper } from 'react-popper';
-import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Collapse from '@material-ui/core/Collapse';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
-import Portal from '@material-ui/core/Portal';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -92,7 +87,7 @@ class NavigationMobile extends React.Component {
         return(
             <div className={classes.navBar} >
                 <div className={classes.logoContainer} >
-                    <img src={LogoImg} className={classes.logo} />
+                    <img src={LogoImg} className={classes.logo} alt="Favicon Logo" />
                 </div>
                 <Manager>
                     <Target>
@@ -118,27 +113,27 @@ class NavigationMobile extends React.Component {
                             <Paper>
                             <MenuList role="menu">
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} onMouseOver={this.handleHover}>ABOUT ME</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} >INTERESTS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem}>GALLERY</h3>
                                     </Link> 
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} >CONTACT</h3>
                                     </Link>
                                 </MenuItem>

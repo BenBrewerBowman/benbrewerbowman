@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import CountUp, { startAnimation } from 'react-countup';
+import CountUp from 'react-countup';
 import OnVisible from 'react-on-visible';
 import MountainBikingPng from '../_img/mountain-biking.png';
 import SnowPng from '../_img/snow.png';
@@ -64,13 +64,17 @@ class OutdoorStats extends React.Component  {
         redraw: false
     };
 
-    handleVisibility = () => {
-        if (!this.state.redraw) {
+    handleVisibility = (isRedraw) => {
+        if (isRedraw) {
             this.setState({
                 redraw: true
             });
         }
     }
+
+    // handleVisibility = (e, { name, value }) => {
+    //     this.setState({ [name]: value });
+    // }
 
     render() {
         const { classes } = this.props;
@@ -87,10 +91,10 @@ class OutdoorStats extends React.Component  {
                 <p className={classes.header} > 
                     Here are my some of my biggest outdoor accomplishments to date:
                 </p>
-                <OnVisible onChange={this.handleVisibility}>
+                <OnVisible onChange={this.handleVisibility(redraw)}>
                     <div className={classes.grid} >
                         <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} justify='center' alignItems='center' >
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
                                 <p className={`${classes.content} ${classes.flexGrow}`} >Most elevation drop mountain biking:</p>
                                 <CountUp
                                     className={classes.countUp}
@@ -105,9 +109,9 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p className={classes.content} >Feet</p>
-                                <img className={classes.img} src={MountainSvg} />
+                                <img className={classes.img} src={MountainSvg} alt="Mountains Icon" />
                             </Grid> 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} justify='center' alignItems='center' >
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
                                 <p className={`${classes.content} ${classes.flexGrow}`}>Longest mountain bike ride:</p>
                                 <CountUp
                                     className={classes.countUp}
@@ -120,9 +124,9 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p className={classes.content} >Miles</p>
-                                <img className={classes.img} src={MountainBikingPng} />
+                                <img className={classes.img} src={MountainBikingPng} alt="Mountain Biker Icon" />
                             </Grid> 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} direction='column' justify='center' alignItems='center' >
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
                                 <p className={`${classes.content} ${classes.flexGrow}`} >Fastest snowboarding speed:</p>
                                 <CountUp
                                     className={classes.countUp}
@@ -135,9 +139,9 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p className={classes.content}>Mph</p>
-                                <img className={classes.img} src={SnowPng}  />
+                                <img className={classes.img} src={SnowPng} alt="Snowflake Icon" />
                             </Grid>  
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn}  justify='center' alignItems='center' >
+                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
                                 <p className={`${classes.content} ${classes.flexGrow}`} >Longest backpacking trip:</p>
                                 <CountUp
                                     className={classes.countUp}
@@ -150,7 +154,7 @@ class OutdoorStats extends React.Component  {
                                     decimals={0}
                                 />
                                 <p className={classes.content} >Days</p>
-                                <img className={classes.img} src={BackpackerPng} />
+                                <img className={classes.img} src={BackpackerPng} alt="Backpacker Icon" />
                             </Grid>  
                         </Grid>
                     </div>

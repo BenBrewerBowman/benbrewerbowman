@@ -6,11 +6,11 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
 
     container: {
-        width: '100%',
-        minWidth: 900,
+        overflow: 'hidden',
         backgroundImage: `url(${SunsetMountainsJPG})`,
-        backgroundSize: '100% 100%',
-        backgroundPosition: "left",
+        backgroundSize: 'cover',
+        backgroundPosition: "50% 50%",
+        backgroundRepeat: "no-repeat",
         color: 'white'  
     },
 

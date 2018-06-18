@@ -97,7 +97,6 @@ class PhotosPage extends React.Component {
     }
 
     handleResize() {
-        console.log("I've been resized!");
         if(window.innerWidth < 750) 
             this.setState({ numColumns: 2 });
         else

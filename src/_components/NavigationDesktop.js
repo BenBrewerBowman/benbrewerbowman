@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, Events, animateScroll as scroll, animateScroll } from 'react-scroll'
+import { Link, Events, animateScroll } from 'react-scroll'
 import LogoImg from '../_img/logo.svg';
 import { withStyles } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/purple';
 
 
 const styles = theme => ({
@@ -68,7 +67,7 @@ class NavigationDesktop extends React.Component {
         return(
             <div className={classes.navBar}>
                 <div className={classes.logoContainer}>
-                    <img src={LogoImg} className={classes.logo} onClick={this.scrollToTop} />
+                    <img className={classes.logo} src={LogoImg} alt="Favicon Logo" onClick={this.scrollToTop} />
                 </div>
                 <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
                     <h3 className={classes.navItem} >ABOUT ME</h3>
