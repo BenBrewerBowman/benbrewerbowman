@@ -1,56 +1,25 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import CountUp from 'react-countup';
-import OnVisible from 'react-on-visible';
 import MountainBikingPng from '../_img/mountain-biking.png';
 import SnowPng from '../_img/snow.png';
 import MountainSvg from '../_img/mountain.svg';
 import BackpackerPng from '../_img/backpacker.svg';
 import { withStyles } from '@material-ui/core/styles';
+import { StatsCounter } from './'
 
 
 const styles = theme => ({
 
     container: {
         padding: '80px 60px',
-        // backgroundColor: '#5DDFED',
     },
     header: {
         textAlign: 'center',
         marginBottom: 20,
-        fontSize: 20
+        fontSize: 24
     },
     grid: {
         marginTop: 30
-    },
-    countUp: {
-        fontSize: 36,
-        marginBottom: 'auto'
-    },
-    content: {
-        marginTop: 10,
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center'
-    },
-    flexGrow: {
-        flexGrow: 1
-    },
-    flexColumn: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        marginBottom: 30,
-    },
-    flexRow: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 30
-    },
-    skillItem: {
-        maxHeight: 200
     },
     img: {
         height: 75
@@ -58,110 +27,67 @@ const styles = theme => ({
 });
 
 
-class OutdoorStats extends React.Component  {
+const OutdoorStats = (props) => {
 
-    state = {
-        redraw: false
-    };
-
-    handleVisibility = (isRedraw) => {
-        if (isRedraw) {
-            this.setState({
-                redraw: true
-            });
-        }
-    }
-
-    // handleVisibility = (e, { name, value }) => {
-    //     this.setState({ [name]: value });
-    // }
-
-    render() {
-        const { classes } = this.props;
-        const { redraw } = this.state;
-        const start = 0;
-        const duration = 2.5;
-        const fastestSnowboardingValue = 57;
-        const longestBackpackingValue = 27;
-        const elevationMountainBikingValue = 5800;
-        const distanceMountainBikingValue = 37;
-        
-        return (
-            <div className={classes.container} >
-                <p className={classes.header} > 
-                    Here are my some of my biggest outdoor accomplishments to date:
-                </p>
-                <OnVisible onChange={this.handleVisibility(redraw)}>
-                    <div className={classes.grid} >
-                        <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
-                                <p className={`${classes.content} ${classes.flexGrow}`} >Most elevation drop mountain biking:</p>
-                                <CountUp
-                                    className={classes.countUp}
-                                    start={start}
-                                    end={elevationMountainBikingValue}
-                                    separator=","
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={false}
-                                    useGrouping={true}
-                                    decimal=","
-                                    decimals={0}
-                                />
-                                <p className={classes.content} >Feet</p>
-                                <img className={classes.img} src={MountainSvg} alt="Mountains Icon" />
-                            </Grid> 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
-                                <p className={`${classes.content} ${classes.flexGrow}`}>Longest mountain bike ride:</p>
-                                <CountUp
-                                    className={classes.countUp}
-                                    start={start}
-                                    end={distanceMountainBikingValue}
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={false}
-                                    useGrouping={true}
-                                    decimals={0}
-                                />
-                                <p className={classes.content} >Miles</p>
-                                <img className={classes.img} src={MountainBikingPng} alt="Mountain Biker Icon" />
-                            </Grid> 
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
-                                <p className={`${classes.content} ${classes.flexGrow}`} >Fastest snowboarding speed:</p>
-                                <CountUp
-                                    className={classes.countUp}
-                                    start={start}
-                                    end={fastestSnowboardingValue}
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={false}
-                                    useGrouping={true}
-                                    decimals={0}
-                                />
-                                <p className={classes.content}>Mph</p>
-                                <img className={classes.img} src={SnowPng} alt="Snowflake Icon" />
-                            </Grid>  
-                            <Grid item xs={12} sm={6} md={3} className={classes.flexColumn} >
-                                <p className={`${classes.content} ${classes.flexGrow}`} >Longest backpacking trip:</p>
-                                <CountUp
-                                    className={classes.countUp}
-                                    start={start}
-                                    end={longestBackpackingValue}
-                                    redraw={redraw}
-                                    duration={duration}
-                                    useEasing={false}
-                                    useGrouping={true}
-                                    decimals={0}
-                                />
-                                <p className={classes.content} >Days</p>
-                                <img className={classes.img} src={BackpackerPng} alt="Backpacker Icon" />
-                            </Grid>  
-                        </Grid>
-                    </div>
-                </OnVisible>
+    const { classes } = props;
+    const start = 0;
+    const duration = 2.5;
+    const fastestSnowboardingValue = 57;
+    const longestBackpackingValue = 27;
+    const elevationMountainBikingValue = 5800;
+    const distanceMountainBikingValue = 37;
+    
+    return (
+        <div className={classes.container} >
+            <p className={classes.header} > 
+                Here are my some of my biggest outdoor accomplishments to date:
+            </p>
+            <div className={classes.grid} >
+                <Grid container spacing={24} alignItems='stretch' justify='flex-end'  > 
+                    <Grid item xs={12} sm={6} md={3} >
+                        <StatsCounter
+                            title='Most elevation drop mountain biking:'
+                            start={start}
+                            end={elevationMountainBikingValue}
+                            duration={duration}
+                            units='Feet'
+                            img={<img className={classes.img} src={MountainSvg} alt="Mountains Icon" />}
+                        />
+                    </Grid> 
+                    <Grid item xs={12} sm={6} md={3} >
+                        <StatsCounter
+                            title='Longest mountain bike ride:'
+                            start={start}
+                            end={distanceMountainBikingValue}
+                            duration={duration}
+                            units='Miles'
+                            img={<img className={classes.img} src={MountainBikingPng} alt="Mountain Biker Icon" />}
+                        />
+                    </Grid> 
+                    <Grid item xs={12} sm={6} md={3} >
+                        <StatsCounter
+                            title='Fastest snowboarding speed:'
+                            start={start}
+                            end={fastestSnowboardingValue}
+                            duration={duration}
+                            units='Mph'
+                            img={<img className={classes.img} src={SnowPng} alt="Snowflake Icon" />}
+                        />
+                    </Grid> 
+                    <Grid item xs={12} sm={6} md={3} >
+                        <StatsCounter
+                            title='Longest backpacking trip:'
+                            start={start}
+                            end={longestBackpackingValue}
+                            duration={duration}
+                            units='Days'
+                            img={<img className={classes.img} src={BackpackerPng} alt="Backpacker Icon" />}
+                        />
+                    </Grid> 
+                </Grid>
             </div>
-        )
-    }
+        </div>
+    );
 }
 
 const OutdoorStatsWithStyles = withStyles(styles) (OutdoorStats);
