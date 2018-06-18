@@ -7,7 +7,8 @@ import { Button, Form } from 'semantic-ui-react';
 
 const styles = theme => ({
     container: {
-        padding: '50px 0px'
+        padding: '50px 0px',
+        overflow: 'hidden'
     },
     header: {
         textAlign: 'center',
@@ -23,7 +24,8 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        
     },
     field: {
         width: '90vw',

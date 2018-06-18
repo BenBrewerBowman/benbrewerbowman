@@ -113,27 +113,27 @@ class NavigationMobile extends React.Component {
                             <Paper>
                             <MenuList role="menu">
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} onMouseOver={this.handleHover}>ABOUT ME</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} onMouseOver={this.handleHover}>SKILLS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} >INTERESTS</h3>
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem}>GALLERY</h3>
                                     </Link> 
                                 </MenuItem>
                                 <MenuItem onClick={this.handleClose}>
-                                    <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                                    <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={0} >
                                         <h3 className={classes.navItem} >CONTACT</h3>
                                     </Link>
                                 </MenuItem>

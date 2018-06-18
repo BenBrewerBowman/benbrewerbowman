@@ -21,7 +21,8 @@ const styles = {
     snowboarderImg: {
         marginTop: 100, 
         transform: 'rotate(-45deg)', 
-        width: 300
+        width: '50vw',
+        maxWidth: 300
     }
 };
 
@@ -150,7 +151,7 @@ const SnowboardingSection = (props) => (
             zIndex: -1,
             position: 'absolute', 
             marginTop: -100,
-            minWidth: 900
+            // minWidth: 900
             }}
             height='500px'
             width='100%'
