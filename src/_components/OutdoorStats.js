@@ -31,7 +31,7 @@ const OutdoorStats = (props) => {
 
     const { classes } = props;
     const start = 0;
-    const duration = 2.5;
+    const duration = 1.5;
     const fastestSnowboardingValue = 57;
     const longestBackpackingValue = 27;
     const elevationMountainBikingValue = 5800;

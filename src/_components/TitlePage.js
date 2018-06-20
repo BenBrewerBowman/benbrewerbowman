@@ -6,12 +6,12 @@ import { Button } from 'semantic-ui-react'
 const TitlePage = () => (
     // <div style={{width: '100%', height: '100vh', backgroundImage: `url(${RockyMountainNatPark})`, backgroundSize: 'cover', overflow: 'hidden'}}>
 
-    <div style={{ height: '110vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <Particles 
             params={{
               "particles": {
                 "number": {
-                  "value": 125,
+                  "value": 0.049667 * window.innerWidth + 27.65,
                   "density": {
                     "enable": true,
                     "value_area": 1362.9002517356944
@@ -119,12 +119,11 @@ const TitlePage = () => (
               "retina_detect": true
             }}
             style={{
-              // backgroundColor: '#1DE9B6',
-              background: 'linear-gradient(#1DE9B6 35%, Whitesmoke 75%)',
+              background: 'linear-gradient(#1DE9B6 35%, Whitesmoke 70%)',
               zIndex: -1,
               position: 'absolute',
               top: 0,
-              left: 0
+              left: 0,
             }}
             height='160vh'
             width='100%'

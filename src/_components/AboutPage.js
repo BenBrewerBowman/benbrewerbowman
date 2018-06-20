@@ -8,7 +8,6 @@ const styles = theme => ({
 
     container: {
         padding: '30px 7vw 50px 7vw',
-        // backgroundColor: '#5DDFED',
     },
 
     gridContainer: {
@@ -17,7 +16,8 @@ const styles = theme => ({
 
     profilePic: {
         paddingBottom: 12,
-        borderRadius: '50%'
+        borderRadius: '50%',
+        zIndex: 2
     },
 
     header: {

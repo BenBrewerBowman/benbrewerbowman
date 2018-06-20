@@ -32,7 +32,7 @@ const SnowboardingSection = (props) => (
             params={{
             "particles": {
                 "number": {
-                    "value": 400,
+                    "value": 0.215 * window.innerWidth + 28.15,
                     "density": {
                     "enable": true,
                     "value_area": 800
@@ -145,7 +145,7 @@ const SnowboardingSection = (props) => (
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundColor: '#5DDFED',
-            // background: 'linear-gradient(to top, #5DDFED 65%, #5DDFED,)',
+            background: 'linear-gradient(to top, #5DDFED 65%, #5DDFED,)',
             width: '100%',
             clipPath: 'polygon(0 0, 100% 0, 100% 80%, 85% 50%, 60% 100%, 40% 60%, 25% 90%, 20% 80%, 15% 90%, 0 60%)',
             zIndex: -1,

@@ -63,26 +63,27 @@ class NavigationDesktop extends React.Component {
     render() {
         const { classes } = this.props;
         const offsetScroll = -60;
+        const duration = 800;
 
         return(
             <div className={classes.navBar}>
                 <div className={classes.logoContainer}>
                     <img className={classes.logo} src={LogoImg} alt="Favicon Logo" onClick={this.scrollToTop} />
                 </div>
-                <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                <Link activeClass="active" to="about-page" spy={true} smooth={true} offset={offsetScroll} duration={duration} >
                     <h3 className={classes.navItem} >ABOUT ME</h3>
                 </Link>
-                <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                <Link activeClass="active" to="skills-page" spy={true} smooth={true} offset={offsetScroll} duration={duration} >
                     <h3 className={classes.navItem} >SKILLS</h3>
                 </Link>
-                <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                <Link activeClass="active" to="interests-page" spy={true} smooth={true} offset={offsetScroll} duration={duration} >
                     <h3 className={classes.navItem} >INTERESTS</h3>
                 </Link>
 
-                <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                <Link activeClass="active" to="photos-page" spy={true} smooth={true} offset={offsetScroll} duration={duration} >
                     <h3 className={classes.navItem} >GALLERY</h3>
                 </Link>            
-                <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={800} >
+                <Link activeClass="active" to="contact-page" spy={true} smooth={true} offset={offsetScroll} duration={duration} >
                     <h3 className={classes.navItem} >CONTACT</h3>
                 </Link>
             </div>

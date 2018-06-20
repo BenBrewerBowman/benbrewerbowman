@@ -2,7 +2,6 @@
   "name": "benbrewerbowman",
   "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "@material-ui/icons": "^1.1.0",

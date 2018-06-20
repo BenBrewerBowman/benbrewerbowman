@@ -132,4 +132,4 @@ class PhotosPage extends React.Component {
     }
 }
 
-export {PhotosPage};
+export { PhotosPage };
