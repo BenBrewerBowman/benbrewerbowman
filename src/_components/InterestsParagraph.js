@@ -49,7 +49,7 @@ const InterestsParagraph = (props) => {
                     Living in Salt Lake City has afforded me great access to outdoor recreation, and I am very grateful to live in such a beautiful area.
                     Maintaining an active lifestyle has played a role in some of my views on important issues.
                     Environmental conservation and sustainability have become two very important issues to me.
-                    I enjoy learning about sustainable any technology that reduces our carbon footprint and improves our air and water quality.
+                    I enjoy learning about sustainable technology that reduces our carbon footprint and improves our air and water quality.
                     I think we owe it to our communities as well as future generations to not leave our surroundings in a worse state than we found it.
                     We only have one earth, so let's all do our part in taking care of it!
                 </p>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Events } from 'react-scroll';
 import { Manager, Target, Popper } from 'react-popper';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import classNames from 'classnames';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -29,7 +30,7 @@ const styles = theme => ({
     navItem: {
         margin: 20,
         color: 'black', 
-        '&:hover': { color: 'red' }
+        '&:hover': { color: '#1DE9B6' }
     },
     logoContainer: {
         marginLeft: '5vw',
@@ -44,6 +45,9 @@ const styles = theme => ({
     menuIcon: {
         color: 'black',
         fontSize: 30 
+    },
+    popperClose: {
+      pointerEvents: 'none'
     }
 });
 
@@ -105,11 +109,12 @@ class NavigationMobile extends React.Component {
                         </div>
                     </Target>
                     <Popper
+                        className={classNames({ [classes.popperClose]: !isMenuOpen })}
                         placement="bottom-end"
                         eventsEnabled={isMenuOpen}
                     >
                         <ClickAwayListener onClickAway={this.handleClose}>
-                        <Grow in={isMenuOpen} id="menu-list-grow" style={{ transformOrigin: '0 0 0' }}>
+                        <Grow in={isMenuOpen} style={{ transformOrigin: '0 0 0', zIndex: -20 }}>
                             <Paper>
                             <MenuList role="menu">
                                 <MenuItem onClick={this.handleClose}>
