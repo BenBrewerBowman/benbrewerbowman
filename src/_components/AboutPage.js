@@ -72,7 +72,7 @@ const AboutPage = (props) => {
                                   I am a full-stack software developer with a passion for working on new and exciting projects.
                                   I graduated with a B.S. in Mechatronics Engineering (Summa Cum Laude) from UNC Asheville, and live in Salt Lake City, UT.
                                   I have experience developing for both startups and larger companies, as well as some side projects of my own.
-                                  If it ecourages innovation, novelty, and a challenge, it already has my attention!
+                                  If it is innovative, novel, and challenging, you can bet it already has my attention!
                                 </p>
                                 <br/>
                                 <br/>
@@ -80,11 +80,11 @@ const AboutPage = (props) => {
                                     Why I became a software developer
                                 </p>
                                 <p>
-                                  My favorite project to date involved developing adaptive recreation software to assist those with physical disabilities in pursuing outdoor recreation. 
-                                  My team and I developed drive-by-wire robotic technology to control a "mountain trike", allowing the rider to independently enjoy the outdoors.
+                                  My favorite project to date involved developing adaptive outdoor recreation software to assist those with physical disabilities. 
+                                  I worked with a small team of four to develop drive-by-wire robotic technology to control a "mountain trike".
                                   The trike allowed the user to go places they've never gone before and increase their mobile independence.
                                   Those once confined to urban pavement could now experience hiking or biking with their family for maybe the first time ever.
-                                  This was both an innovative and meaningful project which ultimately inspired me to make the transition into the exciting world of software development.
+                                  This was both an innovative and meaningful project which ultimately inspired me to make the transition into the invigorating world of software development.
                                 </p>
                             </div>
                         </div>
