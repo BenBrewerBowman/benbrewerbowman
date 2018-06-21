@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
 
     container: {
-        padding: '30px 7vw 50px 7vw',
+        padding: '30px 5vw 50px 5vw',
     },
 
     gridContainer: {
@@ -60,11 +60,10 @@ const AboutPage = (props) => {
                 <Grid className={classes.gridContainer} container spacing={24} direction='row-reverse' alignItems='center' justify='center'  > 
                     <Grid className={classes.centerChildren} item xs={12} md={6} >
                         <img className={classes.profilePic} src={ProfilePic} alt="Ben Brewer Bowman Profile Pic" />
-                        {/* <button style={{marginTop: 30}}class="ui blue inverted button">View Experience</button> */}
+                        {/* <button style={{marginTop: 30}}class="ui blue inverted button">My Experience</button> */}
                     </Grid>           
                     <Grid className={classes.centerChildren} item xs={12} md={6}  >
                         <div className={classes.centerChildren} >
-                            {/* <h1 style={styles.header}> Hey! I'm Ben </h1> */}
                             <div className={classes.content}> 
                                 <p className={classes.paragraphHeader}> 
                                     About me

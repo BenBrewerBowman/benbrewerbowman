@@ -19,7 +19,8 @@ const styles = theme => ({
         fontSize: 24
     },
     grid: {
-        marginTop: 30
+        marginTop: 30,
+        minHeight: 200
     },
     img: {
         height: 75

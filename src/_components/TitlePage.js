@@ -4,9 +4,8 @@ import { Button } from 'semantic-ui-react'
 
 
 const TitlePage = () => (
-    // <div style={{width: '100%', height: '100vh', backgroundImage: `url(${RockyMountainNatPark})`, backgroundSize: 'cover', overflow: 'hidden'}}>
-
-    <div style={{ height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+    <div style={{ height: window.innerHeight, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      {/* <div>     */}
           <Particles 
             params={{
               "particles": {
@@ -81,14 +80,14 @@ const TitlePage = () => (
                 "detect_on": "canvas",
                 "events": {
                   "onhover": {
-                    "enable": true,
+                    "enable": false,
                     "mode": "repulse"
                   },
                   "onclick": {
-                    "enable": true,
+                    "enable": false,
                     "mode": "push"
                   },
-                  "resize": true
+                  "resize": false
                 },
                 "modes": {
                   "grab": {

@@ -13,13 +13,16 @@ const styles = theme => ({
     content: {
         marginTop: 10,
         fontSize: 20,
-        // fontWeight: 'bold',
         textAlign: 'center'
     },
-    flexGrow: {
+    title: {
+        marginTop: 10,
+        fontSize: 20,
+        textAlign: 'center',
         flexGrow: 1
     },
     flexColumn: {
+        minHeight: 230,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -50,7 +53,7 @@ class StatsCounter extends React.Component  {
         
         return (
             <div className={classes.flexColumn} >
-                <p className={`${classes.content} ${classes.flexGrow}`} >{title}</p>
+                <p className={classes.title} >{title}</p>
                 <OnVisible onChange={this.handleVisibility}>
                     <CountUp
                         className={classes.countUp}

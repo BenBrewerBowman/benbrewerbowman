@@ -11,7 +11,7 @@ import NodejsSkillImg from '../_img/nodejs-skill.svg';
 import JavascriptSkillImg from '../_img/javascript-skill.svg';
 import GitSkillImg from '../_img/git-skill.svg';
 import JavaSkillImg from '../_img/java-skill.svg';
-
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 
 
 const styles = {
@@ -56,7 +56,9 @@ const Skill = (props) => (
 
 class SkillsPage extends React.Component {
 
-    state = {visible: false};
+    state = {
+        visible: isWidthUp('md', this.props.width) ? false : true
+    };
 
     handleVisibility = () => {
         if (!this.state.visible) {
@@ -68,22 +70,23 @@ class SkillsPage extends React.Component {
 
     render() {
         const { visible } = this.state;
+        const delayIncrement = isWidthUp('sm', this.props.width) ? 250 : 0;
 
         return (
             <div style={{backgroundColor: 'whiteSmoke'}} id={this.props.id} > 
                 <div style={styles.container} >
                     <h1 style={styles.header}> Developer Skills </h1>
-                    <Zoom in={visible} style={{ transitionDelay: visible ? 2000 : 0 }}>
+                    <Zoom in={visible} style={{ transitionDelay: visible ? 8 * delayIncrement : 0 }}>
                         <h1 style={{textAlign: 'center', marginBottom: 20}}>
                             This site was even built using ReactJS!
                         </h1>
                     </Zoom>   
                     <OnVisible onChange={this.handleVisibility}> 
                       <Grid container spacing={24} alignItems='center' justify='center' >            
-                          <Skill transitionDelay={0} visible={visible} >
+                          <Skill transitionDelay={0 * delayIncrement} visible={visible} >
                               <img src={ReactSkillImg} alt="ReactJS Logo" width={175} height={175} />
                           </Skill>
-                          <Skill transitionDelay={250} visible={visible} >
+                          <Skill transitionDelay={1 * delayIncrement} visible={visible} >
                               <div style={styles.centerChildren}>
                                   <img style={{marginTop: 20}} src={GraphqlSkillImg} alt="GraphQL Logo" height={135} />
                                   <div style={{textAlign: 'center', fontSize: 42, marginTop: 10, color: '#E10098'}}>
@@ -91,22 +94,22 @@ class SkillsPage extends React.Component {
                                   </div>
                               </div>
                           </Skill>
-                          <Skill transitionDelay={500} visible={visible} >
+                          <Skill transitionDelay={2 * delayIncrement} visible={visible} >
                               <img src={PrismaSkillImg} alt="Prisma Logo" width={280}/>
                           </Skill>
-                          <Skill transitionDelay={750} visible={visible} >
+                          <Skill transitionDelay={3 * delayIncrement} visible={visible} >
                               <img src={JavaSkillImg} alt="Java Logo" height={200} />
                           </Skill>
-                          <Skill transitionDelay={1750} visible={visible} >
+                          <Skill transitionDelay={7 * delayIncrement} visible={visible} >
                               <img style={{marginTop: 25}} src={NodejsSkillImg} alt="NodeJS Logo" height={120} />
                           </Skill>
-                          <Skill transitionDelay={1500} visible={visible} >
+                          <Skill transitionDelay={6 * delayIncrement} visible={visible} >
                               <img src={JavascriptSkillImg} alt="JavaScript Logo" height={140} />
                           </Skill>
-                          <Skill transitionDelay={1250} visible={visible} >
+                          <Skill transitionDelay={5 * delayIncrement} visible={visible} >
                               <img src={GitSkillImg} alt="JavaScript Logo" width={200} />
                           </Skill>
-                          <Skill transitionDelay={1000} visible={visible} >
+                          <Skill transitionDelay={4 * delayIncrement} visible={visible} >
                               <div>
                                   <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF'}}>
                                       React
@@ -124,4 +127,5 @@ class SkillsPage extends React.Component {
     }
 };
 
-export { SkillsPage };
+const AboutPageWithWidth = withWidth()(SkillsPage);
+export { AboutPageWithWidth as SkillsPage };
