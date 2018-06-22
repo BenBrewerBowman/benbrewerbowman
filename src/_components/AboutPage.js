@@ -70,7 +70,7 @@ const AboutPage = (props) => {
                                 </p> 
                                 <p>
                                   I am a full-stack software developer with a passion for working on new and exciting projects.
-                                  I graduated with a B.S. in Mechatronics Engineering (Summa Cum Laude) from UNC Asheville, and live in Salt Lake City, UT.
+                                  I graduated with a B.S. in Mechatronics Engineering (Summa Cum Laude) from NC State University, and live in Salt Lake City, UT.
                                   I have experience developing for both startups and larger companies, as well as some side projects of my own.
                                   If it is innovative, novel, and challenging, you can bet it already has my attention!
                                 </p>
