@@ -9,6 +9,20 @@ const styles = {
         marginTop: -50, 
         height: 440
     },
+    particles: {
+        backgroundImage: "",
+        backgroundPosition: "50% 50%",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundColor: '#5DDFED',
+        background: 'linear-gradient(to top, #5DDFED 65%, #5DDFED,)',
+        width: '100%',
+        webkitClipPath: 'polygon(0 0, 100% 0, 100% 100%, 80% 80%, 70% 88%, 50% 65%, 30% 88%, 20% 80%, 0 100%)',
+        clipPath: 'polygon(0 0, 100% 0, 100% 80%, 85% 50%, 60% 100%, 40% 60%, 25% 90%, 20% 80%, 15% 90%, 0 60%)',
+        zIndex: -1,
+        position: 'absolute', 
+        marginTop: -100
+    },
     header: {
         marginTop: 110, 
         textAlign: 'center'
@@ -26,7 +40,7 @@ const styles = {
     }
 };
 
-const SnowboardingSection = (props) => (
+const SnowboardingSection = () => (
     <div>
         <Particles 
             params={{
@@ -139,20 +153,7 @@ const SnowboardingSection = (props) => (
             },
             "retina_detect": true
             }}
-            style={{
-                backgroundImage: "",
-                backgroundPosition: "50% 50%",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundColor: '#5DDFED',
-                background: 'linear-gradient(to top, #5DDFED 65%, #5DDFED,)',
-                width: '100%',
-                webkitClipPath: 'polygon(0 0, 100% 0, 100% 100%, 80% 80%, 70% 88%, 50% 65%, 30% 88%, 20% 80%, 0 100%)',
-                clipPath: 'polygon(0 0, 100% 0, 100% 80%, 85% 50%, 60% 100%, 40% 60%, 25% 90%, 20% 80%, 15% 90%, 0 60%)',
-                zIndex: -1,
-                position: 'absolute', 
-                marginTop: -100
-            }}
+            style={styles.particles}
             height='500px'
             width='100%'
         />

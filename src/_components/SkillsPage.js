@@ -15,17 +15,14 @@ import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 
 
 const styles = {
-
     container: {
         padding: '20px 50px 50px 50px'
     },
-
     header: {
         textAlign: 'center',
         marginBottom: 20,
         fontSize: 48
     },
-
     centerChildren: {
         display: 'flex',
         flexDirection: 'column',
@@ -33,15 +30,25 @@ const styles = {
         justifyContent: 'center',
         marginBottom: 30
     },
-
     skillItem: {
         maxHeight: 200
     },
+    graphQlText: {
+        textAlign: 'center', 
+        fontSize: 42, 
+        marginTop: 10, 
+        color: '#E10098'
+    },
+    reactNative: {
+        textAlign: 'center', 
+        fontSize: 48, 
+        fontWeight: 'bold', 
+        color: '#00D8FF'
+    }
 };
 
 
 const Skill = (props) => (
-  
     <Grid item xs={12} sm={6} md={3} style={styles.centerChildren}>
         <Grow
             in={props.visible}
@@ -89,7 +96,7 @@ class SkillsPage extends React.Component {
                           <Skill transitionDelay={1 * delayIncrement} visible={visible} >
                               <div style={styles.centerChildren}>
                                   <img style={{marginTop: 20}} src={GraphqlSkillImg} alt="GraphQL Logo" height={135} />
-                                  <div style={{textAlign: 'center', fontSize: 42, marginTop: 10, color: '#E10098'}}>
+                                  <div style={styles.graphQlText}>
                                       GraphQL
                                   </div>
                               </div>
@@ -110,11 +117,11 @@ class SkillsPage extends React.Component {
                               <img src={GitSkillImg} alt="JavaScript Logo" width={200} />
                           </Skill>
                           <Skill transitionDelay={4 * delayIncrement} visible={visible} >
-                              <div>
-                                  <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF'}}>
+                              <div style={styles.reactNative} >
+                                  <div >
                                       React
                                   </div>
-                                  <div style={{textAlign: 'center', fontSize: 48, fontWeight: 'bold', color: '#00D8FF', marginTop: 30}}>
+                                  <div style={{marginTop: 30}}>
                                       Native
                                   </div>
                               </div>
